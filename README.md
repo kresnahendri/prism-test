@@ -50,8 +50,10 @@ Juga menginformasikan jumlah pengeluaran, pendapatan, hutang, piutang, gross inc
 - Codeigniter 3.1.2 (PHP Framework)
 - IonAuth v2.5.2 (Authentication library)
 
-### Front-end
+### Database
 - MySql Ver 14.14 Distrib 5.7.16
+
+### Front-end
 - Twitter Bootstrap v3.3.7 (CSS Framework)
 - jQuery v3.13 (JS Library)
 - AngularJS v1.3.6 (JS Framework)
