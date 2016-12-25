@@ -91,12 +91,17 @@ from `$config['base_url'] = 'http://localhost/prism-test/';` to `$config['base_u
 
 #### Login
 - Superadmin
+
 username: admin
 password: password
+
 - Purchase Employee
+
 username: purchase
 password: password
+
 - Sales Employee
+
 username: sales
 password: password
 
