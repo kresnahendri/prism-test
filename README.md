@@ -67,18 +67,18 @@ Juga menginformasikan jumlah pengeluaran, pendapatan, hutang, piutang, gross inc
 1. create dabase in your mysql with db nama: prism-test
 2. import `sql/prism-test.sql`
 3. change this line in `application/config/database.php`
-```php
-$db['default'] = array(
-	'dsn'	=> '',
-	'hostname' => 'localhost', // your hostname
-	'username' => 'root', // mysql username
-	'password' => 'root', // mysql password
-	'database' => 'prism-test', // database name (prism-test)
-	.
-	.
-	.
-]
-```
+	```php
+	$db['default'] = array(
+		'dsn'	=> '',
+		'hostname' => 'localhost', // your hostname
+		'username' => 'root', // mysql username
+		'password' => 'root', // mysql password
+		'database' => 'prism-test', // database name (prism-test)
+		.
+		.
+		.
+	]
+	```
 
 ### Seeting Base Url
 1. change this line in `application/config/config.php`.
