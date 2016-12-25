@@ -101,7 +101,7 @@ username: sales
 password: password
 
 ## Demo
-try the demo [here](kresna-prism-test.pe.hu)
+try the demo [here](http://kresna-prism-test.pe.hu)
 
 ## Notes
 If you get error like this:
