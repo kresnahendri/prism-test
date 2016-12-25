@@ -39,7 +39,7 @@ Juga menginformasikan jumlah pengeluaran, pendapatan, hutang, piutang, gross inc
 image
 
 ## ERD
-image
+![prism-test-erd](https://lh3.googleusercontent.com/RAZJ_bX8pmW7XmeRCD9Og82s2E4OuFFSBADseTZTrnI8tAk-j-feIp2OzPJ92QU63yrVgcTp6wwUxOZkA62a4K4MU4ESwIaoUKM8n9v6yBRw_LV24_oKyh6kuoHxoT4dIq836KeUtc8pz_FELMaxTIgQsYXkKpwglFCtXYuIsWxBTy-l4c5CpTUu-NKQVkWZe1LaFEoQFMWSUZ_cybej6u1EDX9ogl7rXgTw1fB7RZkOUi-KG0Cd-eVp8lhrM7sWDF4ZMTZ5J8tFF4R-54C8XkaXzWECN-ET5LwHoDIR9d0g3aIty9o7LNh3hmVVY3YQpqEdakgzATd0xFfe2D8jduOgTLLpg4NnQTHH5ycYMGEHoYsxW8q7ukUWDyRkmj6CiBqPSfFo8wqga4JK1qYxML8jnGkDQ_ntoH4eFTPdmhctq9tdEMstEe80AjmC4bBy8-JidvDECg6ru7NFTa7YEVh7weScW3Y89TCXMkJhGPrvTqJDoezRaRSchR9DkyOnehjeBs1T5Qj7PCA0YMaxyPQscBLs3foJjetG_lOKWBEBZnA2Y_1kr9jD8Dh32z1ZTdv1vaXrxL_5qNZgRAGIqUCha31cbIcsgAt8y1gjqpjezxSD=w975-h491-no)
 
 ## Class Diagram
 image
@@ -84,8 +84,6 @@ $db['default'] = array(
 
 3. Run on your browser `http://your-site-url/`
 
-## Demo
-try the demo [here](kresna-prism-test.pe.hu)
 4. Login
 - Superadmin
 username: admin
@@ -96,3 +94,6 @@ password: password
 - Sales Employee
 username: sales
 password: password
+
+## Demo
+try the demo [here](kresna-prism-test.pe.hu)
