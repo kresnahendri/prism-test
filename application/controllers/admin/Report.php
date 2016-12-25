@@ -6,7 +6,7 @@ class Report extends MY_Controller {
 	public function __construct() {
 		parent::__construct();
 		$this->load->model('Product_model', 'm_product');
-		$this->load->model('Customer_model', 'm_customer');
+		// $this->load->model('Customer_model', 'm_customer');
 		$this->load->model('Sale_model', 'm_sale');
 		$this->load->model('Purchase_model', 'm_purchase');
 		if (!$this->ion_auth->logged_in()) {
