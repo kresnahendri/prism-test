@@ -83,7 +83,7 @@ $db['default'] = array(
 ### Seeting Base Url
 1. change this line in `application/config/config.php`.
 
-from `$config['base_url'] = 'http://localhost/prism-test/';` to `$config['base_url'] = 'http://your-site-url/'`
+	from `$config['base_url'] = 'http://localhost/prism-test/';` to `$config['base_url'] = 'http://your-site-url/'`
 
 2. Run app on your web browser `http://your-site-url/`
 
@@ -92,18 +92,21 @@ from `$config['base_url'] = 'http://localhost/prism-test/';` to `$config['base_u
 #### Login
 - Superadmin
 
-username: admin
-password: password
+	username: admin
+
+	password: password
 
 - Purchase Employee
 
-username: purchase
-password: password
+	username: purchase
+
+	password: password
 
 - Sales Employee
 
-username: sales
-password: password
+	username: sales
+
+	password: password
 
 ## Demo
 try the demo [here](http://kresna-prism-test.pe.hu)
@@ -114,7 +117,6 @@ If you get error like this:
 
 run this code in your mysql console.
 ```sql
-SET GROUP BY
 mysql> set global sql_mode='STRICT_TRANS_TABLES,NO_ZERO_IN_DATE,NO_ZERO_DATE,ERROR_FOR_DIVISION_BY_ZERO,NO_AUTO_CREATE_USER,NO_ENGINE_SUBSTITUTION';
 mysql> set session sql_mode='STRICT_TRANS_TABLES,NO_ZERO_IN_DATE,NO_ZERO_DATE,ERROR_FOR_DIVISION_BY_ZERO,NO_AUTO_CREATE_USER,NO_ENGINE_SUBSTITUTION';
 ```
