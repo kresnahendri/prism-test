@@ -11,6 +11,11 @@
   	<a href="<?php echo site_url('admin/product') ?>" class="btn btn-sm btn-danger">Back</a>
   	<a href="<?php echo site_url('admin/product/'.$product->id.'/edit') ?>" class="btn btn-sm btn-info">Edit</a>
   </h1>
+  <?php if ($product->img): ?>
+    <img class="img-product" src="<?php echo site_url('uploads/products/img/'.$product->img) ?>" alt="<?php echo $product->name ?>">
+  <?php else: ?>
+    <p>No image found</p>
+  <?php endif ?>
   <table class="table table-stripped">
   	<tr>
   		<td>SKU</td><td>: <?php echo $product->sku ?></td>

@@ -7,13 +7,14 @@
     </small>
   </h1>
 
-	<a href="<?php echo site_url('admin/product/create') ?>" class="btn btn-primary pull-right">Add Product</a>
+	<a href="<?php echo site_url('admin/product/create') ?>" class="btn btn-primary pull-right">Add Product</a><br>
 	
 	<div class="row">
 		<div class="col-md-12">
 			<div class="table-responsive">
 				<table class="table table-striped table-hovered" id="dataTable">
 					<thead>
+						<th>Image</th>
 						<th>Name</th>
 						<th>Brand</th>
 						<th>Category</th>
@@ -27,6 +28,7 @@
 					<tbody>
 						<?php foreach ($products as $product): ?>			
 							<tr>
+								<td><img class="img-product-sm" src="<?php echo site_url('uploads/products/img/'.$product->img) ?>" alt=""></td>
 								<td><?php echo $product->name ?></td>
 								<td><?php echo $product->brand ?></td>
 								<td><?php echo $product->category_name	 ?></td>

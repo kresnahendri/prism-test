@@ -8,7 +8,7 @@
 
   <?php $this->load->view('admin/partials/_validation_errors'); ?>
 
-	<?php echo form_open('admin/product/'.$product->id.'/edit'); ?>
+	<?php echo form_open_multipart('admin/product/'.$product->id.'/edit'); ?>
 		<div class="col-md-6">
 			<!-- name -->
 			<div class="form-group">
@@ -80,6 +80,12 @@
 			<div class="form-group">
 				<?php echo form_label('Buy Price', 'buy_price', ['class' => 'control-label']); ?>
 				<?php echo form_input('buy_price', $product->buy_price, ['class' => 'form-control']); ?>
+			</div>
+
+			<!-- image -->
+			<div class="form-group">
+				<?php echo form_label('Image', 'img', ['class' => 'control-label']); ?>
+				<input type="file" name="img" class="form-control">
 			</div>
 			
 			<!-- button: cancel, submit -->

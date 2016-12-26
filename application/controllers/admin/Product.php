@@ -48,12 +48,15 @@ class Product extends MY_Controller {
 		$this->form_validation->set_rules($this->m_product->conf_product_input_form_val); // set form_validation rules
 
 		if ($this->form_validation->run()) { // if pass
-			$this->m_product->insert($this->input->post());
+			$img = $this->m_product->upload_img(); // upload produtct img
+
+			$this->m_product->insert($this->input->post(), $img['file_name']);
 			$this->session->set_flashdata('success', 'Create Success');
 			redirect('admin/product','refresh');
 		} else { // if not pass
 			$this->render('admin/products/create', $data);
 		}
+		// var_dump($this->input->post('img'));
 	}
 
 	/**
@@ -72,9 +75,11 @@ class Product extends MY_Controller {
 		$this->form_validation->set_rules($this->m_product->conf_product_input_form_val);
 
 		if ($this->form_validation->run()) { // if pass
-			$this->m_product->update($id, $this->input->post());
+			$img = $this->m_product->upload_img(); // upload produtct img
+
+			$this->m_product->update($id, $this->input->post(), $img['file_name']);
 			$this->session->set_flashdata('success', 'Update Success');
-			redirect('admin/product','refresh');
+			redirect('admin/product/'.$id, 'refresh');
 		} else { // if not pass
 			$this->render('admin/products/update', $data);
 		}

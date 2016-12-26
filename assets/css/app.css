@@ -13,3 +13,11 @@ a {
 .navbar-fixed-bottom .navbar-collapse, .navbar-fixed-top .navbar-collapse {
     max-height: 400px;
 }
+
+img.img-product {
+	max-height: 300px;
+}
+
+img.img-product-sm {
+	max-height: 50px;
+}

@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Host: localhost
--- Generation Time: Dec 25, 2016 at 10:54 PM
+-- Generation Time: Dec 26, 2016 at 11:27 AM
 -- Server version: 5.7.16-0ubuntu0.16.04.1
 -- PHP Version: 7.0.14-2+deb.sury.org~xenial+1
 
@@ -70,7 +70,8 @@ CREATE TABLE `customer` (
 
 INSERT INTO `customer` (`id`, `name`, `email`, `phone`, `address`, `city`, `province`, `country`, `zip`, `users_id`) VALUES
 (1, 'John Lennon', 'lennon@gmail.com', '085966531591', 'Jl. D1 no.30, Kebon Baru, Gudang Peluru, Tebet', 'Jakarta Selatan', 'DKI Jakarta', 'Indonesia', 45612, 0),
-(2, 'Jim Morrison', 'morrison@gmail.com', '085723580807', 'Jl. PGA no.1, Dayeuh Kolot', 'Bandung', 'Jawa Barat', 'Indonesia', 45623, 0);
+(2, 'Jim Morrison', 'morrison@gmail.com', '085723580807', 'Jl. PGA no.1, Dayeuh Kolot', 'Bandung', 'Jawa Barat', 'Indonesia', 45623, 0),
+(3, 'Charlie van Houten', 'houten@gmail.com', '085612348485', 'Jl. Stasiun Timur no. 12', 'Bandung', 'Jawa Barat', 'Indonesia', 45128, 0);
 
 -- --------------------------------------------------------
 
@@ -135,24 +136,24 @@ CREATE TABLE `product` (
 --
 
 INSERT INTO `product` (`id`, `sku`, `name`, `brand`, `description`, `retail_price`, `wholesale_price`, `buy_price`, `stock`, `active`, `img`, `created_at`, `category_id`, `supplier_id`) VALUES
-(1, '626179273-9', 'Apple iPhone 6 Plus Space Grey Smartphone [128GB/Garansi Resmi]', 'Apple', 'Duis bibendum. Morbi non quam nec dui luctus rutrum. Nulla tellus.', 15000000, 13000000, 11000000, 10, 1, '', '2016-12-24 08:35:05', 1, 1),
-(2, '021678128-0', 'Google Pixel Smartphone - Quite Black [32 GB/4 GB]', 'Google', 'Suspendisse potenti. In eleifend quam a odio. In hac habitasse platea dictumst.', 15000000, 14000000, 12000000, 15, 1, '', '2016-12-24 08:35:05', 1, 2),
-(3, '062858916-6', 'Samsung S7 Edge Olympic Edition Rio 2016 Smartphone', 'Samsung', 'Quisque porta volutpat erat. Quisque erat eros, viverra eget, congue eget, semper rutrum, nulla. Nunc purus.', 10000000, 9000000, 7000000, 10, 1, '', '2016-12-24 08:35:05', 1, 2),
-(4, '596958434-7', 'Apple New Macbook Pro MNQG2 2016 Notebook - Silver [Touchbar + Touch ID/13inch/ Core i5 2.9 GHz/ 8GB/ Intel Iris 550/ 512GB]', 'Apple', 'Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Proin risus. Praesent lectus.', 31000000, 25000000, 20000000, 15, 1, '', '2016-12-24 08:35:05', 2, 1),
-(5, '127407117-8', 'Apple iMac MK462 Dekstop PC [27 Inch Retina 5K/Quad Core i5 3.2 Ghz/8 GB/1 TB/AMD Radeon M380 2 GB]', 'Apple', 'Praesent id massa id nisl venenatis lacinia. Aenean sit amet justo. Morbi ut odio.\r\n\r\nCras mi pede, malesuada in, imperdiet et, commodo vulputate, justo. In blandit ultrices enim. Lorem ipsum dolor sit amet, consectetuer adipiscing elit.\r\n\r\nProin interdum mauris non ligula pellentesque ultrices. Phasellus id sapien in sapien iaculis congue. Vivamus metus arcu, adipiscing molestie, hendrerit at, vulputate vitae, nisl.', 29000000, 27000000, 20000000, 35, 1, '', '2016-12-24 08:35:06', 2, 1),
-(6, '520970668-0', 'Microsoft Surface Pro 4 Notebook - Silver [2in1/12"/Core i7/16GB/256 GB]', 'Microsoft', 'Mauris enim leo, rhoncus sed, vestibulum sit amet, cursus id, turpis. Integer aliquet, massa id lobortis convallis, tortor risus dapibus augue, vel accumsan tellus nisi eu orci. Mauris lacinia sapien quis libero.', 25000000, 23000000, 20000000, 7, 1, '', '2016-12-24 08:35:06', 2, 2),
-(7, '245982050-X', 'Levis NY Runner 77127-3806 Sepatu Pria - Light Grey', 'Levis', 'Proin eu mi. Nulla ac enim. In tempor, turpis nec euismod scelerisque, quam turpis adipiscing lorem, vitae mattis nibh ligula nec sem.\r\n\r\nDuis aliquam convallis nunc. Proin at turpis a pede posuere nonummy. Integer non velit.\r\n\r\nDonec diam neque, vestibulum eget, vulputate ut, ultrices vel, augue. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Donec pharetra, magna vestibulum aliquet ultrices, erat tortor sollicitudin mi, sit amet lobortis sapien sapien non mi. Integer ac neque.', 900000, 700000, 600000, 10, 1, '', '2016-12-24 08:35:06', 3, 1),
-(8, '467148471-4', 'Carvil Man Bigbike 02 T-Shirt - Black', 'Carvil', 'Morbi porttitor lorem id ligula. Suspendisse ornare consequat lectus. In est risus, auctor sed, tristique in, tempus sit amet, sem.', 90000, 80000, 70000, 10, 1, '', '2016-12-24 08:35:06', 3, 2),
-(9, '486492942-4', 'Kalibre Evoline 02 910142-006 Black Yellow Tas Ransel', 'Kalibre', 'Maecenas leo odio, condimentum id, luctus nec, molestie sed, justo. Pellentesque viverra pede ac diam. Cras pellentesque volutpat dui.\r\n\r\nMaecenas tristique, est et tempus semper, est quam pharetra magna, ac consequat metus sapien ut nunc. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Mauris viverra diam vitae quam. Suspendisse potenti.\r\n\r\nNullam porttitor lacus at turpis. Donec posuere metus vitae ipsum. Aliquam non mauris.', 550000, 500000, 400000, 10, 1, '', '2016-12-24 08:35:06', 3, 2),
-(10, '791810135-9', 'Barli Asmara Osaka BAIED Dress001 Dress - Nude off White', 'Barli Asmara', 'In hac habitasse platea dictumst. Morbi vestibulum, velit id pretium iaculis, diam erat fermentum justo, nec condimentum neque sapien placerat ante. Nulla justo.\r\n\r\nAliquam quis turpis eget elit sodales scelerisque. Mauris sit amet eros. Suspendisse accumsan tortor quis turpis.', 1200000, 1000000, 800000, 10, 1, '', '2016-12-24 08:35:06', 4, 1),
-(11, '296245065-2', 'Vavavoom Satin Sleepwear With Robe - Violet', 'Vavavoom', 'Quisque id justo sit amet sapien dignissim vestibulum. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Nulla dapibus dolor vel est. Donec odio justo, sollicitudin ut, suscipit a, feugiat et, eros.', 320000, 300000, 250000, 10, 0, '', '2016-12-24 08:35:06', 4, 2),
-(12, '028797792-7', 'Prada Sacca 2 Manici Hand Bag - Blue', 'Prada', 'Mauris enim leo, rhoncus sed, vestibulum sit amet, cursus id, turpis. Integer aliquet, massa id lobortis convallis, tortor risus dapibus augue, vel accumsan tellus nisi eu orci. Mauris lacinia sapien quis libero.\r\n\r\nNullam sit amet turpis elementum ligula vehicula consequat. Morbi a ipsum. Integer a nibh.\r\n\r\nIn quis justo. Maecenas rhoncus aliquam lacus. Morbi quis tortor id nulla ultrices aliquet.', 10700000, 10000000, 9000000, 10, 1, '', '2016-12-24 08:35:06', 4, 2),
-(13, '612717615-8', 'Ayoyoo Summer Flower Moon Fuschia Stool', 'Theayoyoo', 'Curabitur gravida nisi at nibh. In hac habitasse platea dictumst. Aliquam augue quam, sollicitudin vitae, consectetuer eget, rutrum at, lorem.\r\n\r\nInteger tincidunt ante vel ipsum. Praesent blandit lacinia erat. Vestibulum sed magna at nunc commodo placerat.\r\n\r\nPraesent blandit. Nam nulla. Integer pede justo, lacinia eget, tincidunt eget, tempus vel, pede.', 285000, 250000, 150000, 10, 1, '', '2016-12-24 08:35:06', 5, 1),
-(14, '648479991-1', 'Sentra Furniture Box Sofa L', 'Sentra Furniture', 'In hac habitasse platea dictumst. Etiam faucibus cursus urna. Ut tellus.', 6500000, 6000000, 5000000, 15, 1, '', '2016-12-24 08:35:06', 5, 2),
-(15, '274548528-8', 'Melody Rustic Bookcase Rak Buku', 'Melody', 'Aliquam quis turpis eget elit sodales scelerisque. Mauris sit amet eros. Suspendisse accumsan tortor quis turpis.', 1200000, 1100000, 900000, 15, 1, '', '2016-12-24 08:35:06', 5, 1),
-(16, '283889315-7', 'Vespa Beverly Sport Touring 350 White Sepeda Motor [Jakarta]', 'Vespa', 'Maecenas leo odio, condimentum id, luctus nec, molestie sed, justo. Pellentesque viverra pede ac diam. Cras pellentesque volutpat dui.\r\n\r\nMaecenas tristique, est et tempus semper, est quam pharetra magna, ac consequat metus sapien ut nunc. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Mauris viverra diam vitae quam. Suspendisse potenti.\r\n\r\nNullam porttitor lacus at turpis. Donec posuere metus vitae ipsum. Aliquam non mauris.', 180000000, 170000000, 150000000, 10, 1, '', '2016-12-24 08:35:06', 6, 1),
-(17, '931121296-2', 'KYT-ELSICO #3 Helm Half Face - Black Doff Gun Metal', 'KYT', 'Curabitur in libero ut massa volutpat convallis. Morbi odio odio, elementum eu, interdum eu, tincidunt in, leo. Maecenas pulvinar lobortis est.', 400000, 380000, 300000, 10, 1, '', '2016-12-24 08:35:06', 6, 2),
-(18, '503464253-0', 'Kawasaki Z250 Sepeda Motor - Green', 'Kawasaki', 'In congue. Etiam justo. Etiam pretium iaculis justo.', 54000000, 50000000, 45000000, 9, 1, '', '2016-12-24 08:35:06', 6, 1);
+(1, '626179273-9', 'Apple iPhone 6 Plus Space Grey Smartphone [128GB/Garansi Resmi]', 'Apple', 'Duis bibendum. Morbi non quam nec dui luctus rutrum. Nulla tellus.', 15000000, 13000000, 11000000, 10, 1, 'Apple_iPhone_6_Plus_Space_Grey_Smartphone_128GBGaransi_Resmi.jpg', '2016-12-24 08:35:05', 1, 1),
+(2, '021678128-0', 'Google Pixel Smartphone - Quite Black [32 GB/4 GB]', 'Google', 'Suspendisse potenti. In eleifend quam a odio. In hac habitasse platea dictumst.', 15000000, 14000000, 12000000, 10, 1, 'Google_Pixel_Smartphone_-_Quite_Black_32_GB4_GB.jpg', '2016-12-26 04:25:26', 1, 2),
+(3, '062858916-6', 'Samsung S7 Edge Olympic Edition Rio 2016 Smartphone', 'Samsung', 'Quisque porta volutpat erat. Quisque erat eros, viverra eget, congue eget, semper rutrum, nulla. Nunc purus.', 10000000, 9000000, 7000000, 10, 1, 'Samsung_S7_Edge_Olympic_Edition_Rio_2016_Smartphone.jpg', '2016-12-24 08:35:05', 1, 2),
+(4, '596958434-7', 'Apple New Macbook Pro MNQG2 2016 Notebook - Silver [Touchbar + Touch ID/13inch/ Core i5 2.9 GHz/ 8GB/ Intel Iris 550/ 512GB]', 'Apple', 'Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Proin risus. Praesent lectus.', 31000000, 25000000, 20000000, 15, 1, 'Apple_New_Macbook_Pro_MNQG2_2016_Notebook_-_Silver_Touchbar_+_Touch_ID13inch_Core_i5_2.9_GHz_8GB_Intel_Iris_550_512GB', '2016-12-24 08:35:05', 2, 1),
+(5, '127407117-8', 'Apple iMac MK462 Dekstop PC [27 Inch Retina 5K/Quad Core i5 3.2 Ghz/8 GB/1 TB/AMD Radeon M380 2 GB]', 'Apple', 'Praesent id massa id nisl venenatis lacinia. Aenean sit amet justo. Morbi ut odio.\r\n\r\nCras mi pede, malesuada in, imperdiet et, commodo vulputate, justo. In blandit ultrices enim. Lorem ipsum dolor sit amet, consectetuer adipiscing elit.\r\n\r\nProin interdum mauris non ligula pellentesque ultrices. Phasellus id sapien in sapien iaculis congue. Vivamus metus arcu, adipiscing molestie, hendrerit at, vulputate vitae, nisl.', 29000000, 27000000, 20000000, 35, 1, 'Apple_iMac_MK462_Dekstop_PC_27_Inch_Retina_5KQuad_Core_i5_3.2_Ghz8_GB1_TBAMD_Radeon_M380_2_GB', '2016-12-24 08:35:06', 2, 1),
+(6, '520970668-0', 'Microsoft Surface Pro 4 Notebook - Silver [2in1/12"/Core i7/16GB/256 GB]', 'Microsoft', 'Mauris enim leo, rhoncus sed, vestibulum sit amet, cursus id, turpis. Integer aliquet, massa id lobortis convallis, tortor risus dapibus augue, vel accumsan tellus nisi eu orci. Mauris lacinia sapien quis libero.', 25000000, 23000000, 20000000, 7, 1, 'Microsoft_Surface_Pro_4_Notebook_-_Silver_2in112Core_i716GB256_GB.jpg', '2016-12-24 08:35:06', 2, 2),
+(7, '245982050-X', 'Levis NY Runner 77127-3806 Sepatu Pria - Light Grey', 'Levis', 'Proin eu mi. Nulla ac enim. In tempor, turpis nec euismod scelerisque, quam turpis adipiscing lorem, vitae mattis nibh ligula nec sem.\r\n\r\nDuis aliquam convallis nunc. Proin at turpis a pede posuere nonummy. Integer non velit.\r\n\r\nDonec diam neque, vestibulum eget, vulputate ut, ultrices vel, augue. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Donec pharetra, magna vestibulum aliquet ultrices, erat tortor sollicitudin mi, sit amet lobortis sapien sapien non mi. Integer ac neque.', 900000, 700000, 600000, 10, 1, 'Levis_NY_Runner_77127-3806_Sepatu_Pria_-_Light_Grey.jpg', '2016-12-24 08:35:06', 3, 1),
+(8, '467148471-4', 'Carvil Man Bigbike 02 T-Shirt - Black', 'Carvil', 'Morbi porttitor lorem id ligula. Suspendisse ornare consequat lectus. In est risus, auctor sed, tristique in, tempus sit amet, sem.', 90000, 80000, 70000, 10, 1, 'Carvil_Man_Bigbike_02_T-Shirt_-_Black.jpg', '2016-12-24 08:35:06', 3, 2),
+(9, '486492942-4', 'Kalibre Evoline 02 910142-006 Black Yellow Tas Ransel', 'Kalibre', 'Maecenas leo odio, condimentum id, luctus nec, molestie sed, justo. Pellentesque viverra pede ac diam. Cras pellentesque volutpat dui.\r\n\r\nMaecenas tristique, est et tempus semper, est quam pharetra magna, ac consequat metus sapien ut nunc. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Mauris viverra diam vitae quam. Suspendisse potenti.\r\n\r\nNullam porttitor lacus at turpis. Donec posuere metus vitae ipsum. Aliquam non mauris.', 550000, 500000, 400000, 10, 1, 'Kalibre_Evoline_02_910142-006_Black_Yellow_Tas_Ransel.jpg', '2016-12-24 08:35:06', 3, 2),
+(10, '791810135-9', 'Barli Asmara Osaka BAIED Dress001 Dress - Nude off White', 'Barli Asmara', 'In hac habitasse platea dictumst. Morbi vestibulum, velit id pretium iaculis, diam erat fermentum justo, nec condimentum neque sapien placerat ante. Nulla justo.\r\n\r\nAliquam quis turpis eget elit sodales scelerisque. Mauris sit amet eros. Suspendisse accumsan tortor quis turpis.', 1200000, 1000000, 800000, 10, 1, 'Barli_Asmara_Osaka_BAIED_Dress001_Dress_-_Nude_off_White.jpg', '2016-12-24 08:35:06', 4, 1),
+(11, '296245065-2', 'Vavavoom Satin Sleepwear With Robe - Violet', 'Vavavoom', 'Quisque id justo sit amet sapien dignissim vestibulum. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Nulla dapibus dolor vel est. Donec odio justo, sollicitudin ut, suscipit a, feugiat et, eros.', 320000, 300000, 250000, 10, 0, 'Vavavoom_Satin_Sleepwear_With_Robe_-_Violet.jpg', '2016-12-24 08:35:06', 4, 2),
+(12, '028797792-7', 'Prada Sacca 2 Manici Hand Bag - Blue', 'Prada', 'Mauris enim leo, rhoncus sed, vestibulum sit amet, cursus id, turpis. Integer aliquet, massa id lobortis convallis, tortor risus dapibus augue, vel accumsan tellus nisi eu orci. Mauris lacinia sapien quis libero.\r\n\r\nNullam sit amet turpis elementum ligula vehicula consequat. Morbi a ipsum. Integer a nibh.\r\n\r\nIn quis justo. Maecenas rhoncus aliquam lacus. Morbi quis tortor id nulla ultrices aliquet.', 10700000, 10000000, 9000000, 10, 1, 'Prada_Sacca_2_Manici_Hand_Bag_-_Blue.jpg', '2016-12-24 08:35:06', 4, 2),
+(13, '612717615-8', 'Ayoyoo Summer Flower Moon Fuschia Stool', 'Theayoyoo', 'Curabitur gravida nisi at nibh. In hac habitasse platea dictumst. Aliquam augue quam, sollicitudin vitae, consectetuer eget, rutrum at, lorem.\r\n\r\nInteger tincidunt ante vel ipsum. Praesent blandit lacinia erat. Vestibulum sed magna at nunc commodo placerat.\r\n\r\nPraesent blandit. Nam nulla. Integer pede justo, lacinia eget, tincidunt eget, tempus vel, pede.', 285000, 250000, 150000, 10, 1, 'Ayoyoo_Summer_Flower_Moon_Fuschia_Stool.jpg', '2016-12-24 08:35:06', 5, 1),
+(14, '648479991-1', 'Sentra Furniture Box Sofa L', 'Sentra Furniture', 'In hac habitasse platea dictumst. Etiam faucibus cursus urna. Ut tellus.', 6500000, 6000000, 5000000, 15, 1, 'Sentra_Furniture_Box_Sofa_L.jpg', '2016-12-24 08:35:06', 5, 2),
+(15, '274548528-8', 'Melody Rustic Bookcase Rak Buku', 'Melody', 'Aliquam quis turpis eget elit sodales scelerisque. Mauris sit amet eros. Suspendisse accumsan tortor quis turpis.', 1200000, 1100000, 900000, 15, 1, 'Melody_Rustic_Bookcase_Rak_Buku.jpg', '2016-12-24 08:35:06', 5, 1),
+(16, '283889315-7', 'Vespa Beverly Sport Touring 350 White Sepeda Motor [Jakarta]', 'Piagio', 'Maecenas leo odio, condimentum id, luctus nec, molestie sed, justo. Pellentesque viverra pede ac diam. Cras pellentesque volutpat dui.\r\n\r\nMaecenas tristique, est et tempus semper, est quam pharetra magna, ac consequat metus sapien ut nunc. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Mauris viverra diam vitae quam. Suspendisse potenti.\r\n\r\nNullam porttitor lacus at turpis. Donec posuere metus vitae ipsum. Aliquam non mauris.', 180000000, 170000000, 150000000, 10, 1, 'Vespa_Beverly_Sport_Touring_350_White_Sepeda_Motor_Jakarta.jpg', '2016-12-24 08:35:06', 6, 1),
+(17, '931121296-2', 'KYT-ELSICO #3 Helm Half Face - Black Doff Gun Metal', 'KYT', 'Curabitur in libero ut massa volutpat convallis. Morbi odio odio, elementum eu, interdum eu, tincidunt in, leo. Maecenas pulvinar lobortis est.', 400000, 380000, 300000, 10, 1, 'KYT-ELSICO_3_Helm_Half_Face_-_Black_Doff_Gun_Metal.jpg', '2016-12-24 08:35:06', 6, 2),
+(18, '503464253-0', 'Kawasaki Z250 Sepeda Motor - Green', 'Kawasaki', 'In congue. Etiam justo. Etiam pretium iaculis justo.', 54000000, 50000000, 45000000, 9, 1, 'Kawasaki_Z250_Sepeda_Motor_-_Green.jpg', '2016-12-24 08:35:06', 6, 1);
 
 -- --------------------------------------------------------
 
@@ -210,7 +211,6 @@ INSERT INTO `purchase_detail` (`id`, `product_qty`, `product_price`, `product_id
 (1, 10, 11000000, 1, 1),
 (2, 10, 20000000, 4, 1),
 (3, 10, 20000000, 5, 1),
-(4, 5, 12000000, 2, 2),
 (7, 5, 900000, 15, 5),
 (8, 10, 5000000, 14, 6),
 (9, 1, 250000, 11, 7);
@@ -333,7 +333,7 @@ CREATE TABLE `users` (
 --
 
 INSERT INTO `users` (`id`, `ip_address`, `username`, `password`, `salt`, `email`, `activation_code`, `forgotten_password_code`, `forgotten_password_time`, `remember_code`, `created_on`, `last_login`, `active`, `first_name`, `last_name`, `company`, `phone`) VALUES
-(1, '127.0.0.1', 'admin', '$2a$07$SeBknntpZror9uyftVopmu61qg0ms8Qv1yV6FG.kQOSM.9QhmTo36', '', 'admin@admin.com', '', NULL, NULL, NULL, 1268889823, 1482680775, 1, 'Super', 'Admin', 'ADMIN', '0'),
+(1, '127.0.0.1', 'admin', '$2a$07$SeBknntpZror9uyftVopmu61qg0ms8Qv1yV6FG.kQOSM.9QhmTo36', '', 'admin@admin.com', '', NULL, NULL, NULL, 1268889823, 1482721345, 1, 'Super', 'Admin', 'ADMIN', '0'),
 (2, '127.0.0.1', 'purchase', '$2a$07$SeBknntpZror9uyftVopmu61qg0ms8Qv1yV6FG.kQOSM.9QhmTo36', '', 'purchase@email.com', '', NULL, NULL, NULL, 1268889823, 1482675321, 1, 'Purchase', 'Employee', 'PRISM', '0'),
 (3, '127.0.0.1', 'sales', '$2a$07$SeBknntpZror9uyftVopmu61qg0ms8Qv1yV6FG.kQOSM.9QhmTo36', '', 'sales@email.com', '', NULL, NULL, NULL, 1268889823, 1482664697, 1, 'Sales', 'Employee', 'PRISM', '0');
 
@@ -461,7 +461,7 @@ ALTER TABLE `category`
 -- AUTO_INCREMENT for table `customer`
 --
 ALTER TABLE `customer`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
 --
 -- AUTO_INCREMENT for table `groups`
 --
@@ -476,7 +476,7 @@ ALTER TABLE `login_attempts`
 -- AUTO_INCREMENT for table `product`
 --
 ALTER TABLE `product`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=19;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=29;
 --
 -- AUTO_INCREMENT for table `purchase`
 --
@@ -501,7 +501,7 @@ ALTER TABLE `sale_detail`
 -- AUTO_INCREMENT for table `supplier`
 --
 ALTER TABLE `supplier`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
 --
 -- AUTO_INCREMENT for table `users`
 --

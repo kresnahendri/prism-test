@@ -30,8 +30,8 @@ Data pelanggan dan supplier disimpan di sistem untuk kebutuhan purchase dan sale
 Menginformasikan kepada admin mengenai jumlah sales order, jumlah purchase order, beserta statusnya masing-masing.
 Juga menginformasikan jumlah pengeluaran, pendapatan, hutang, piutang, gross income, dan net income. Data yang disajikan berbentuk chart dan table.
 
-## Users Role
-- admin: all
+## Users Admin Roles
+- superadmin: all
 - purchase: create purchase, view purchase, report
 - sale: create sale, view sale, report
 
@@ -52,6 +52,9 @@ Juga menginformasikan jumlah pengeluaran, pendapatan, hutang, piutang, gross inc
 
 ### Database
 - MySql Ver 14.14 Distrib 5.7.16
+
+### Server
+- Apache2 Ubuntu
 
 ### Front-end
 - Twitter Bootstrap v3.3.7 (CSS Framework)

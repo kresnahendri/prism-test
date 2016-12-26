@@ -25,8 +25,8 @@ class Product_model extends MY_Model {
 		],
 		[
 			'field' => 'description',
-			'label' => 'SKU Number',
-			'rules' => 'required|min_length[10]',
+			'label' => 'Description',
+			'rules' => 'required',
 		],
 		[
 			'field' => 'retail_price',
@@ -136,21 +136,23 @@ class Product_model extends MY_Model {
 
 	/**
 	 * insert product
-	 * @param $input
+	 * @param $input, $img = NULL
 	 * @return bool
 	 */
-	public function insert($input) {
+	public function insert($input, $img = NULL) {
 		$data = $this->set_input($input);
+		$data['img'] = $img;
 		return $this->db->insert('product', $data);
 	}
 
 	/**
 	 * update product
-	 * @param $id, $input
+	 * @param $id, $input, $img = NULL
 	 * @return bool
 	 */
-	public function update($id, $input) {
+	public function update($id, $input, $img = NULL) {
 		$data = $this->set_input($input);
+		$data['img'] = $img;
 		$this->db->where('id', $id);
 		return $this->db->update('product', $data);
 	}
@@ -187,6 +189,28 @@ class Product_model extends MY_Model {
 	public function delete($id) {
 		$this->db->where('id', $id);
 		return $this->db->delete('product');
+	}
+
+	/**
+	 * upload product image
+	 * @return boo or data
+	 */
+	public function upload_img() {
+		$config['file_name'] 			= $this->input->post('name');
+		$config['overwrite']			= TRUE;
+		$config['upload_path']    = './uploads/products/img/';
+    $config['allowed_types'] 	= '*';
+    $config['max_size']  			= '100';
+    $config['max_width']  		= '1024';
+    $config['max_height']  		= '768';
+    $this->load->library('upload', $config);
+    
+    if (!$this->upload->do_upload('img')){
+    	$this->session->set_flashdata('err', $this->upload->display_errors());
+    	return false;
+    } else {
+    	return $this->upload->data();
+    }
 	}
 
 }

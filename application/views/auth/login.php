@@ -13,7 +13,7 @@
     <?php echo form_open("auth/login");?>
   
       <div class="form-group">
-        <?php echo lang('login_identity_label', 'identity');?>
+        <?php echo form_label('Username:', 'identity');?>
         <?php echo form_input($identity, '', ['class' => 'form-control']);?>
       </div>
 
