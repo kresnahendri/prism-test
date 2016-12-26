@@ -70,7 +70,7 @@
 
           <?php if ($this->ion_auth->is_admin()): ?>
             <li>
-              <a href="javascript:;" data-toggle="collapse" data-target="#pm"><i class="fa fa-fw fa-shopping-bag"></i> Product Management <i class="fa fa-fw fa-caret-down"></i></a>
+              <a href="javascript:;" data-toggle="collapse" data-target="#pm"><i class="fa fa-fw fa-shopping-bag"></i> Product Mgt. <i class="fa fa-fw fa-caret-down"></i></a>
               <ul id="pm" class="collapse in">
                 <li><a href="<?php echo site_url('admin/product') ?>">Product</a></li>
                 <li><a href="<?php echo site_url('admin/category') ?>">Category</a></li>

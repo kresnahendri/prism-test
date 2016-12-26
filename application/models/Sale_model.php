@@ -6,6 +6,7 @@ class Sale_model extends MY_Model {
 	public function __construct() {
 		parent::__construct();
 		$this->load->model('Product_model', 'm_product');
+		$this->load->model('Email_model', 'm_email');
 	}
 
 	/**
@@ -280,6 +281,18 @@ class Sale_model extends MY_Model {
 
 		$this->db->where('sale_id', $id);
 		$this->db->delete('sale_detail');
+	}
+
+	public function handling_email($to, $sale) {
+		if ($this->input->post('accepted') != NULL && $this->input->post('paid') != NULL && $this->input->post('shipped') != NULL && $this->input->post('recived') != NULL) {
+			$this->m_email->sale_admin_recived($to, $sale);
+		} else if ($this->input->post('accepted') != NULL && $this->input->post('paid') != NULL && $this->input->post('shipped') != NULL) {
+			$this->m_email->sale_admin_shipped($to, $sale);
+		} else if ($this->input->post('accepted') != NULL && $this->input->post('paid') != NULL) {
+			$this->m_email->sale_admin_paid($to, $sale);
+			echo "string";
+		}
+
 	}
 
 }

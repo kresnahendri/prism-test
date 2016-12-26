@@ -35,6 +35,17 @@
 					</label>
 				</div>
 			</div>
+			
+			<!-- paid checkbox -->
+			<div class="col-md-3">
+				<div class="checkbox">
+					<label>				
+						<?php echo form_checkbox('paid', 1, FALSE); ?>
+						<i class="fa fa-dollar"></i> Paid
+						<input type="date" class="form-control" name="paid_date" value="<?php echo set_value('paid_date') ?>">
+					</label>
+				</div>
+			</div>
 
 			<!-- shipped checkbox -->
 			<div class="col-md-3">
@@ -43,17 +54,6 @@
 						<?php echo form_checkbox('shipped', 1, FALSE); ?>
 						<i class="fa fa-ship"></i> Shipped
 						<input type="date" class="form-control" name="shipped_date" value="<?php echo set_value('shipped_date') ?>">
-					</label>
-				</div>
-			</div>
-
-			<!-- paid checkbox -->
-			<div class="col-md-3">
-				<div class="checkbox">
-					<label>				
-						<?php echo form_checkbox('paid', 1, FALSE); ?>
-						<i class="fa fa-dollar"></i> Paid
-						<input type="date" class="form-control" name="paid_date" value="<?php echo set_value('paid_date') ?>">
 					</label>
 				</div>
 			</div>

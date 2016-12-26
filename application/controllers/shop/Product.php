@@ -27,7 +27,7 @@ class Product extends MY_Controller {
 		$data['products'] = $this->m_product->get_where('product.active = 1 AND product.category_id = '.$category_id); // get all products
 		$this->render_shop('shop/products/index', $data);
 	}
-
+	
 	/**
 	 * product detail by id
 	 * @param $id

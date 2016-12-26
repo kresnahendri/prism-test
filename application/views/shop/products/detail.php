@@ -5,7 +5,7 @@
 	<div class="col-md-6">
 		<h3><?php echo $product->name ?></h3>
 		<p>Brand: <?php echo $product->brand ?></p>
-		<p>Category: <?php echo $product->category_name ?></p>
+		<p>Category: <a href="<?php echo site_url('shop/category/'.$product->category_id) ?>"><?php echo $product->category_name ?></a></p>
 		<hr>
 		<h1 class="product-price">Rp <?php echo number_format($product->retail_price) ?></h1>
 		<p>Avaliable stock: <b><?php echo $product->stock ?></b></p><br>
@@ -36,9 +36,9 @@
 
 <hr>
 
-<div class="row">
+<!-- <div class="row">
 	<div class="col-md-12">
 		<h4>Other products</h4>
 		<p>Other</p>
 	</div>
-</div>
+</div> -->

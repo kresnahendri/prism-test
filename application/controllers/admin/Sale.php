@@ -68,11 +68,17 @@ class Sale extends MY_Controller {
 				$this->render('admin/sales/create', $data);
 			} else { // product is not empty
 				$this->m_sale->insert($this->input->post());
+
 				$sale_id = $this->db->insert_id();
 				$this->m_sale->insert_detail($counter, $sale_id);
 				if ($this->m_sale->is_completed($sale_id)) {
 					$this->m_sale->update_product_stock($sale_id, -1);
 				}
+
+				// handling email
+				$sale = $this->m_sale->get_where('sale.id = '.$sale_id);
+				$this->m_sale->handling_email($sale->first_row()->email, $sale);
+
 				$this->session->set_flashdata('success', 'Create Success');
 				redirect('admin/sale','refresh');
 			}
@@ -90,12 +96,17 @@ class Sale extends MY_Controller {
 			$this->m_sale->date_status_val(); // date status validation
 			if ($this->form_validation->run()) {
 				$this->m_sale->update($id, $this->input->post());
+
+				// handling email
+				$sale = $this->m_sale->get_where('sale.id = '.$id);
+				$this->m_sale->handling_email($sale->first_row()->email, $sale);
+
+				$this->session->set_flashdata('success', 'Update Success');
 			} else {
 				$this->session->set_flashdata('err', validation_errors());
 			}
 			redirect('admin/sale/'.$id,'refresh');
 		} else {
-			$this->session->set_flashdata('success', 'Update Success');
 			redirect('admin/sale','refresh');
 		}
 	}

@@ -14,7 +14,6 @@
     <?php foreach ($this->cart->contents() as $items): ?>
       <?php echo form_hidden($i.'[rowid]', $items['rowid']); ?>
       <?php echo form_hidden($i.'[stock]', $items['stock']); ?>
-      <?php echo form_hidden('counter', $i); ?>
       <?php if ($checkout): ?>
         <?php echo form_hidden('product_id'.$i, $items['id']); ?>
         <?php echo form_hidden('product_price'.$i, $items['price']); ?>
@@ -43,6 +42,7 @@
         <td class="text-right">Rp <?php echo $this->cart->format_number($items['subtotal']); ?></td>
       </tr>
       <?php $i++; ?>
+      <?php echo form_hidden('counter', $i); ?>
     <?php endforeach; ?>
 
     <tr>

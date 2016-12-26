@@ -9,6 +9,7 @@ class Cart extends MY_Controller {
 		$this->load->model('Customer_model', 'm_customer');
 		$this->load->model('Product_model', 'm_product');
 		$this->load->model('Sale_model', 'm_sale');
+		$this->load->model('Email_model', 'm_email');
 		$this->load->helper('text');
 		$this->load->library('cart');
 	}
@@ -103,6 +104,8 @@ class Cart extends MY_Controller {
 			$sale_id = $this->db->insert_id();
 			$this->m_sale->insert_detail($counter, $sale_id);
 			$this->cart->destroy(); // empty cart
+			$sale = $this->m_sale->get_where('sale.id = '.$sale_id);
+			$this->m_email->customer_order($email, $sale);
 			$this->render_shop('shop/carts/thank');
 		} else { // if not pass
 			$this->session->set_flashdata('err', validation_errors());

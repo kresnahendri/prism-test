@@ -1,0 +1,1 @@
+<p>Pembayaran untuk order <strong><?php echo $sale->first_row()->order_no ?></strong> telah kami terima!</p>

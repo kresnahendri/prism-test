@@ -5,6 +5,7 @@ $route['default_controller'] = 'auth';
 $route['404_override'] = '';
 $route['translate_uri_dashes'] = TRUE;
 $route['/'] = "admin/report";
+$route['admin'] = "auth";
 
 // admin/product routes
 $route['admin/product'] = "admin/product";
@@ -46,6 +47,10 @@ $route['admin/purchase/(:num)/delete'] = "admin/purchase/delete/$1";
 $route['shop'] = "shop/product";
 $route['shop/product/(:num)'] = "shop/product/detail/$1";
 $route['shop/category/(:num)'] = "shop/product/category/$1";
+$route['shop/brand/(:any)'] = "shop/product/brand/$1";
 
 // shop/cart routes
 $route['shop/checkout'] = "shop/cart/checkout";
+
+// shop/payment_confirmation
+$route['payment-confimation'] = "shop/payment-confimation";

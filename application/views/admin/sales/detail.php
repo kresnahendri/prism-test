@@ -94,17 +94,6 @@
             </div>
           </div>
 
-          <!-- shipped checkbox -->
-          <div class="col-md-3">
-            <div class="checkbox">
-              <label>       
-                <?php echo form_checkbox('shipped', 1, $sale->first_row()->shipped); ?>
-                <i class="fa fa-ship"></i> Shipped
-                <input type="date" class="form-control" name="shipped_date" value="<?php if($sale->first_row()->shipped_date) { echo date('Y-m-d', strtotime($sale->first_row()->shipped_date)); } ?>">
-              </label>
-            </div>
-          </div>
-
           <!-- paid checkbox -->
           <div class="col-md-3">
             <div class="checkbox">
@@ -112,6 +101,17 @@
                 <?php echo form_checkbox('paid', 1, $sale->first_row()->paid); ?>
                 <i class="fa fa-dollar"></i> Paid
                 <input type="date" class="form-control" name="paid_date" value="<?php if($sale->first_row()->paid_date) { echo date('Y-m-d', strtotime($sale->first_row()->paid_date)); } ?>">
+              </label>
+            </div>
+          </div>
+
+          <!-- shipped checkbox -->
+          <div class="col-md-3">
+            <div class="checkbox">
+              <label>
+                <?php echo form_checkbox('shipped', 1, $sale->first_row()->shipped); ?>
+                <i class="fa fa-ship"></i> Shipped
+                <input type="date" class="form-control" name="shipped_date" value="<?php if($sale->first_row()->shipped_date) { echo date('Y-m-d', strtotime($sale->first_row()->shipped_date)); } ?>">
               </label>
             </div>
           </div>
