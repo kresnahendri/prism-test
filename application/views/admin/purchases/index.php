@@ -7,7 +7,7 @@
     </small>
   </h1>
 
-	<a href="<?php echo site_url('admin/purchase/create') ?>" class="btn btn-primary pull-right">Add purchase</a>
+	<a href="<?php echo site_url('admin/purchase/create') ?>" class="btn btn-primary pull-right">Add purchase</a><br><br>
 	<?php if ($purchases): ?>
 		
 		<div class="row">

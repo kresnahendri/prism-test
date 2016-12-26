@@ -7,7 +7,7 @@
     </small>
   </h1>
 
-	<a href="<?php echo site_url('admin/product/create') ?>" class="btn btn-primary pull-right">Add Product</a><br>
+	<a href="<?php echo site_url('admin/product/create') ?>" class="btn btn-primary pull-right">Add Product</a><br><br>
 	
 	<div class="row">
 		<div class="col-md-12">

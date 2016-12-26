@@ -7,7 +7,7 @@
     </small>
   </h1>
 
-	<a href="<?php echo site_url('admin/category/create') ?>" class="btn btn-primary pull-right">Add category</a>
+	<a href="<?php echo site_url('admin/category/create') ?>" class="btn btn-primary pull-right">Add category</a><br><br>
 	
 	<div class="row">
 		<div class="col-md-12">
