@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Host: localhost
--- Generation Time: Dec 26, 2016 at 11:27 AM
+-- Generation Time: Dec 26, 2016 at 12:11 PM
 -- Server version: 5.7.16-0ubuntu0.16.04.1
 -- PHP Version: 7.0.14-2+deb.sury.org~xenial+1
 
@@ -144,7 +144,7 @@ INSERT INTO `product` (`id`, `sku`, `name`, `brand`, `description`, `retail_pric
 (6, '520970668-0', 'Microsoft Surface Pro 4 Notebook - Silver [2in1/12"/Core i7/16GB/256 GB]', 'Microsoft', 'Mauris enim leo, rhoncus sed, vestibulum sit amet, cursus id, turpis. Integer aliquet, massa id lobortis convallis, tortor risus dapibus augue, vel accumsan tellus nisi eu orci. Mauris lacinia sapien quis libero.', 25000000, 23000000, 20000000, 7, 1, 'Microsoft_Surface_Pro_4_Notebook_-_Silver_2in112Core_i716GB256_GB.jpg', '2016-12-24 08:35:06', 2, 2),
 (7, '245982050-X', 'Levis NY Runner 77127-3806 Sepatu Pria - Light Grey', 'Levis', 'Proin eu mi. Nulla ac enim. In tempor, turpis nec euismod scelerisque, quam turpis adipiscing lorem, vitae mattis nibh ligula nec sem.\r\n\r\nDuis aliquam convallis nunc. Proin at turpis a pede posuere nonummy. Integer non velit.\r\n\r\nDonec diam neque, vestibulum eget, vulputate ut, ultrices vel, augue. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Donec pharetra, magna vestibulum aliquet ultrices, erat tortor sollicitudin mi, sit amet lobortis sapien sapien non mi. Integer ac neque.', 900000, 700000, 600000, 10, 1, 'Levis_NY_Runner_77127-3806_Sepatu_Pria_-_Light_Grey.jpg', '2016-12-24 08:35:06', 3, 1),
 (8, '467148471-4', 'Carvil Man Bigbike 02 T-Shirt - Black', 'Carvil', 'Morbi porttitor lorem id ligula. Suspendisse ornare consequat lectus. In est risus, auctor sed, tristique in, tempus sit amet, sem.', 90000, 80000, 70000, 10, 1, 'Carvil_Man_Bigbike_02_T-Shirt_-_Black.jpg', '2016-12-24 08:35:06', 3, 2),
-(9, '486492942-4', 'Kalibre Evoline 02 910142-006 Black Yellow Tas Ransel', 'Kalibre', 'Maecenas leo odio, condimentum id, luctus nec, molestie sed, justo. Pellentesque viverra pede ac diam. Cras pellentesque volutpat dui.\r\n\r\nMaecenas tristique, est et tempus semper, est quam pharetra magna, ac consequat metus sapien ut nunc. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Mauris viverra diam vitae quam. Suspendisse potenti.\r\n\r\nNullam porttitor lacus at turpis. Donec posuere metus vitae ipsum. Aliquam non mauris.', 550000, 500000, 400000, 10, 1, 'Kalibre_Evoline_02_910142-006_Black_Yellow_Tas_Ransel.jpg', '2016-12-24 08:35:06', 3, 2),
+(9, '486492942-4', 'Kalibre Evoline 02 910142-006 Black Yellow Tas Ransel', 'Kalibre', 'Maecenas leo odio, condimentum id, luctus nec, molestie sed, justo. Pellentesque viverra pede ac diam. Cras pellentesque volutpat dui.\r\n\r\nMaecenas tristique, est et tempus semper, est quam pharetra magna, ac consequat metus sapien ut nunc. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Mauris viverra diam vitae quam. Suspendisse potenti.\r\n\r\nNullam porttitor lacus at turpis. Donec posuere metus vitae ipsum. Aliquam non mauris.', 550000, 500000, 400000, 13, 1, 'Kalibre_Evoline_02_910142-006_Black_Yellow_Tas_Ransel.jpg', '2016-12-24 08:35:06', 3, 2),
 (10, '791810135-9', 'Barli Asmara Osaka BAIED Dress001 Dress - Nude off White', 'Barli Asmara', 'In hac habitasse platea dictumst. Morbi vestibulum, velit id pretium iaculis, diam erat fermentum justo, nec condimentum neque sapien placerat ante. Nulla justo.\r\n\r\nAliquam quis turpis eget elit sodales scelerisque. Mauris sit amet eros. Suspendisse accumsan tortor quis turpis.', 1200000, 1000000, 800000, 10, 1, 'Barli_Asmara_Osaka_BAIED_Dress001_Dress_-_Nude_off_White.jpg', '2016-12-24 08:35:06', 4, 1),
 (11, '296245065-2', 'Vavavoom Satin Sleepwear With Robe - Violet', 'Vavavoom', 'Quisque id justo sit amet sapien dignissim vestibulum. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Nulla dapibus dolor vel est. Donec odio justo, sollicitudin ut, suscipit a, feugiat et, eros.', 320000, 300000, 250000, 10, 0, 'Vavavoom_Satin_Sleepwear_With_Robe_-_Violet.jpg', '2016-12-24 08:35:06', 4, 2),
 (12, '028797792-7', 'Prada Sacca 2 Manici Hand Bag - Blue', 'Prada', 'Mauris enim leo, rhoncus sed, vestibulum sit amet, cursus id, turpis. Integer aliquet, massa id lobortis convallis, tortor risus dapibus augue, vel accumsan tellus nisi eu orci. Mauris lacinia sapien quis libero.\r\n\r\nNullam sit amet turpis elementum ligula vehicula consequat. Morbi a ipsum. Integer a nibh.\r\n\r\nIn quis justo. Maecenas rhoncus aliquam lacus. Morbi quis tortor id nulla ultrices aliquet.', 10700000, 10000000, 9000000, 10, 1, 'Prada_Sacca_2_Manici_Hand_Bag_-_Blue.jpg', '2016-12-24 08:35:06', 4, 2),
@@ -152,7 +152,7 @@ INSERT INTO `product` (`id`, `sku`, `name`, `brand`, `description`, `retail_pric
 (14, '648479991-1', 'Sentra Furniture Box Sofa L', 'Sentra Furniture', 'In hac habitasse platea dictumst. Etiam faucibus cursus urna. Ut tellus.', 6500000, 6000000, 5000000, 15, 1, 'Sentra_Furniture_Box_Sofa_L.jpg', '2016-12-24 08:35:06', 5, 2),
 (15, '274548528-8', 'Melody Rustic Bookcase Rak Buku', 'Melody', 'Aliquam quis turpis eget elit sodales scelerisque. Mauris sit amet eros. Suspendisse accumsan tortor quis turpis.', 1200000, 1100000, 900000, 15, 1, 'Melody_Rustic_Bookcase_Rak_Buku.jpg', '2016-12-24 08:35:06', 5, 1),
 (16, '283889315-7', 'Vespa Beverly Sport Touring 350 White Sepeda Motor [Jakarta]', 'Piagio', 'Maecenas leo odio, condimentum id, luctus nec, molestie sed, justo. Pellentesque viverra pede ac diam. Cras pellentesque volutpat dui.\r\n\r\nMaecenas tristique, est et tempus semper, est quam pharetra magna, ac consequat metus sapien ut nunc. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Mauris viverra diam vitae quam. Suspendisse potenti.\r\n\r\nNullam porttitor lacus at turpis. Donec posuere metus vitae ipsum. Aliquam non mauris.', 180000000, 170000000, 150000000, 10, 1, 'Vespa_Beverly_Sport_Touring_350_White_Sepeda_Motor_Jakarta.jpg', '2016-12-24 08:35:06', 6, 1),
-(17, '931121296-2', 'KYT-ELSICO #3 Helm Half Face - Black Doff Gun Metal', 'KYT', 'Curabitur in libero ut massa volutpat convallis. Morbi odio odio, elementum eu, interdum eu, tincidunt in, leo. Maecenas pulvinar lobortis est.', 400000, 380000, 300000, 10, 1, 'KYT-ELSICO_3_Helm_Half_Face_-_Black_Doff_Gun_Metal.jpg', '2016-12-24 08:35:06', 6, 2),
+(17, '931121296-2', 'KYT-ELSICO #3 Helm Half Face - Black Doff Gun Metal', 'KYT', 'Curabitur in libero ut massa volutpat convallis. Morbi odio odio, elementum eu, interdum eu, tincidunt in, leo. Maecenas pulvinar lobortis est.', 400000, 380000, 300000, 11, 1, 'KYT-ELSICO_3_Helm_Half_Face_-_Black_Doff_Gun_Metal.jpg', '2016-12-24 08:35:06', 6, 2),
 (18, '503464253-0', 'Kawasaki Z250 Sepeda Motor - Green', 'Kawasaki', 'In congue. Etiam justo. Etiam pretium iaculis justo.', 54000000, 50000000, 45000000, 9, 1, 'Kawasaki_Z250_Sepeda_Motor_-_Green.jpg', '2016-12-24 08:35:06', 6, 1);
 
 -- --------------------------------------------------------
@@ -184,10 +184,10 @@ CREATE TABLE `purchase` (
 
 INSERT INTO `purchase` (`id`, `order_no`, `accepted`, `shipped`, `paid`, `recived`, `order_date`, `accepted_date`, `shipped_date`, `paid_date`, `recived_date`, `notes`, `payment_method`, `supplier_id`) VALUES
 (1, 'PO-000001', 1, 1, 1, 1, '2016-12-24 17:42:18', '2016-12-24 00:00:00', '2016-12-24 00:00:00', '2016-12-24 00:00:00', '2016-12-24 00:00:00', 'buy from Steve Jobs', NULL, 1),
-(2, 'PO-000002', 1, 1, 1, 1, '2016-12-24 18:14:11', '2016-12-30 00:00:00', '2016-12-30 00:00:00', '2016-12-30 00:00:00', '2016-12-30 00:00:00', '', NULL, 2),
 (5, 'PO-000003', 1, 1, 1, 1, '2016-12-25 22:51:56', '2017-01-01 00:00:00', '2017-01-01 00:00:00', '2017-01-01 00:00:00', '2017-01-01 00:00:00', NULL, NULL, 1),
 (6, 'PO-000006', 1, 1, 1, 1, '2016-12-25 22:52:43', '2016-12-29 00:00:00', '2016-12-29 00:00:00', '2016-12-29 00:00:00', '2016-12-29 00:00:00', NULL, NULL, 2),
-(7, 'PO-000007', 1, 1, 0, 0, '2016-12-25 22:53:35', '2016-12-25 00:00:00', '2016-12-26 00:00:00', NULL, NULL, NULL, NULL, 2);
+(7, 'PO-000007', 1, 1, 0, 0, '2016-12-25 22:53:35', '2016-12-25 00:00:00', '2016-12-26 00:00:00', NULL, NULL, NULL, NULL, 2),
+(8, 'PO-000002', 1, 1, 1, 1, '2016-12-26 12:04:29', '2017-01-07 00:00:00', '2017-01-07 00:00:00', '2017-01-07 00:00:00', '2017-01-07 00:00:00', '', NULL, 2);
 
 -- --------------------------------------------------------
 
@@ -213,7 +213,9 @@ INSERT INTO `purchase_detail` (`id`, `product_qty`, `product_price`, `product_id
 (3, 10, 20000000, 5, 1),
 (7, 5, 900000, 15, 5),
 (8, 10, 5000000, 14, 6),
-(9, 1, 250000, 11, 7);
+(9, 1, 250000, 11, 7),
+(10, 3, 400000, 9, 8),
+(11, 1, 300000, 17, 8);
 
 -- --------------------------------------------------------
 
@@ -481,12 +483,12 @@ ALTER TABLE `product`
 -- AUTO_INCREMENT for table `purchase`
 --
 ALTER TABLE `purchase`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
 --
 -- AUTO_INCREMENT for table `purchase_detail`
 --
 ALTER TABLE `purchase_detail`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=10;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=12;
 --
 -- AUTO_INCREMENT for table `sale`
 --
