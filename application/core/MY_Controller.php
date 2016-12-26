@@ -17,6 +17,7 @@ class MY_Controller extends CI_Controller {
 		define('ORDER_SHIPPED', 2);
 		define('ORDER_PAID', 3);
 		define("ORDER_RECIVED", 4);
+		define("PRODUCT_IMG_BASE_URL", site_url('uploads/products/img/'));
 	}
 	
 	public function render($view, $data=NULL) {
@@ -25,6 +26,10 @@ class MY_Controller extends CI_Controller {
 
 	public function render_auth($view, $data=NULL) {
 		$this->load->view('auth/layout', ['view' => $view, 'data' => $data]);
+	}
+
+	public function render_shop($view, $data=NULL) {
+		$this->load->view('shop/layout', ['view' => $view, 'data' => $data]);
 	}
 
 	

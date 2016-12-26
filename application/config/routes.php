@@ -41,3 +41,11 @@ $route['admin/purchase'] = "admin/purchase";
 $route['admin/purchase/(:num)'] = "admin/purchase/detail/$1";
 $route['admin/purchase/(:num)/edit'] = "admin/purchase/update/$1";
 $route['admin/purchase/(:num)/delete'] = "admin/purchase/delete/$1";
+
+// shop/product routes
+$route['shop'] = "shop/product";
+$route['shop/product/(:num)'] = "shop/product/detail/$1";
+$route['shop/category/(:num)'] = "shop/product/category/$1";
+
+// shop/cart routes
+$route['shop/checkout'] = "shop/cart/checkout";

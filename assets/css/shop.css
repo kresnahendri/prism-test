@@ -1,0 +1,48 @@
+html, body {
+	font-family: 'Montserrat', sans-serif;
+}
+body {
+	padding-bottom: 20px;
+}
+
+.product-box {
+	/*min-height: 400px;*/
+}
+
+.product-box-img {
+	height: 150px;
+	overflow: hidden;
+	-webkit-transition: all .1s; /* For Safari 3.1 to 6.0 */
+  transition: all .1s;
+}
+.product-box-img:hover {
+    opacity: 0.5;
+    filter: alpha(opacity=50);
+    padding-right: 10px;
+    padding-left: 10px;
+}
+
+.product-box-info {
+	height: 120px;
+	position: relative;
+}
+
+.product-box-info>.product-box-info__content {
+	position: absolute;
+	width: 100%;
+	bottom: 0;
+}
+
+.product-price {
+	color: #2980b9;
+	font-style: italic;
+}
+
+a.product-link {
+	text-decoration: none;
+	color: inherit;
+}
+
+p {
+	text-align: justify;
+}

@@ -70,7 +70,7 @@ class CI_Cart {
 	 *
 	 * @var bool
 	 */
-	public $product_name_safe = TRUE;
+	public $product_name_safe = FALSE;
 
 	// --------------------------------------------------------------------------
 
