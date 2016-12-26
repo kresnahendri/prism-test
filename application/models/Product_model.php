@@ -199,7 +199,7 @@ class Product_model extends MY_Model {
 		$config['file_name'] 			= $this->input->post('name');
 		$config['overwrite']			= TRUE;
 		$config['upload_path']    = './uploads/products/img/';
-    $config['allowed_types'] 	= '*';
+    $config['allowed_types'] 	= 'gif|jpg|jpeg|png';
     $config['max_size']  			= '100';
     $config['max_width']  		= '1024';
     $config['max_height']  		= '768';
