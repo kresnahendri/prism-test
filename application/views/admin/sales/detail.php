@@ -54,8 +54,8 @@
               <td><?php echo $s->sku ?></td>
               <td><?php echo $s->product_name ?></td>
               <td><?php echo $s->product_qty ?></td>
-              <td><?php echo $s->product_price ?></td>
-              <td><?php echo $s->product_price * $s->product_qty ?></td>
+              <td><?php echo number_format($s->product_price) ?></td>
+              <td><?php echo number_format($s->product_price * $s->product_qty) ?></td>
               <?php $total_amount += ($s->product_price * $s->product_qty) ?>
             </tr>
           <?php endforeach ?>

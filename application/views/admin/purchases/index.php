@@ -29,7 +29,7 @@
 								<tr>
 									<td><?php echo $purchase->order_no ?></td>
 									<td><?php echo $purchase->supplier_id ?></td>
-									<td><?php echo $this->m_purchase->get_total_amount_by_purchase_id($purchase->id) ?></td>
+									<td><?php echo number_format($this->m_purchase->get_total_amount_by_purchase_id($purchase->id)) ?></td>
 									<td><?php echo $purchase->accepted ? '<i class="fa fa-check">' : ''; ?></td>
 									<td><?php echo $purchase->shipped ? '<i class="fa fa-check">' : ''; ?></td>
 									<td><?php echo $purchase->paid ? '<i class="fa fa-check">' : ''; ?></td>

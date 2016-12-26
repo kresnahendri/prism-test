@@ -46,14 +46,14 @@
               <td><?php echo $s->sku ?></td>
               <td><?php echo $s->product_name ?></td>
               <td><?php echo $s->product_qty ?></td>
-              <td><?php echo $s->product_price ?></td>
-              <td><?php echo $s->product_price * $s->product_qty ?></td>
+              <td><?php echo number_format($s->product_price) ?></td>
+              <td><?php echo number_format($s->product_price * $s->product_qty) ?></td>
               <?php $total_amount += ($s->product_price * $s->product_qty) ?>
             </tr>
           <?php endforeach ?>
           <tr>
             <td colspan="4"></td>
-            <td><?php echo $total_amount ?></td>
+            <td><?php echo number_format($total_amount) ?></td>
           </tr>
         </tbody>
       </table>
@@ -69,7 +69,7 @@
 
     <?php if (!$this->m_purchase->is_completed($purchase->first_row()->purchase_id)): ?>
       <?php echo form_label('Update Status', 'status', ['class' => 'control-label']); ?>
-      <?php echo form_open('admin/purchase/update-status'.$purchase->first_row()->purchase_id); ?>
+      <?php echo form_open('admin/purchase/update-status/'.$purchase->first_row()->purchase_id); ?>
         <?php echo form_hidden('order_no', $purchase->first_row()->order_no); ?>
         <?php echo form_hidden('notes', $purchase->first_row()->notes); ?>
         <?php echo form_hidden('supplier_id', $purchase->first_row()->supplier_id); ?>

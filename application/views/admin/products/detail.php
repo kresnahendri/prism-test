@@ -27,13 +27,13 @@
   		<td>Description</td><td>: <?php echo $product->description ?></td>
   	</tr>
   	<tr>
-  		<td>Reatail Price</td><td>: <?php echo $product->retail_price ?></td>
+  		<td>Reatail Price</td><td>: <?php echo number_format($product->retail_price) ?></td>
   	</tr>
   	<tr>
-  		<td>Wholesale Price</td><td>: <?php echo $product->wholesale_price ?></td>
+  		<td>Wholesale Price</td><td>: <?php echo number_format($product->wholesale_price) ?></td>
   	</tr>
   	<tr>
-  		<td>Buy Price</td><td>: <?php echo $product->buy_price ?></td>
+  		<td>Buy Price</td><td>: <?php echo number_format($product->buy_price) ?></td>
   	</tr>
   	<tr>
   		<td>Stock</td><td>: <?php echo $product->stock ?></td>

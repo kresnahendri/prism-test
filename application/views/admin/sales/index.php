@@ -29,7 +29,7 @@
 								<tr>
 									<td><?php echo $sale->order_no ?></td>
 									<td><?php echo $sale->customer_id ?></td>
-									<td><?php echo $this->m_sale->get_total_amount_by_sale_id($sale->id) ?></td>
+									<td><?php echo number_format($this->m_sale->get_total_amount_by_sale_id($sale->id)) ?></td>
 									<td><?php echo $sale->accepted ? '<i class="fa fa-check">' : ''; ?></td>
 									<td><?php echo $sale->shipped ? '<i class="fa fa-check">' : ''; ?></td>
 									<td><?php echo $sale->paid ? '<i class="fa fa-check">' : ''; ?></td>

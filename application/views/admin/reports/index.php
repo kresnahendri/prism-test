@@ -61,27 +61,27 @@
 				<tbody>
 					<tr>
 						<td><b>Total Income</b></td>
-						<td><?php echo $total_income ?></td>
+						<td><?php echo number_format($total_income) ?></td>
 					</tr>
 					<tr>
 						<td><b>Total Cost</b></td>
-						<td><?php echo $total_cost ?></td>
+						<td><?php echo number_format($total_cost) ?></td>
 					</tr>
 					<tr>
 						<td><b>Total Credit (Piutang)</b></td>
-						<td><?php echo $total_credit ?></td>
+						<td><?php echo number_format($total_credit) ?></td>
 					</tr>
 					<tr>
 						<td><b>Total Debt (Hutang)</b></td>
-						<td><?php echo $total_debt ?></td>
+						<td><?php echo number_format($total_debt) ?></td>
 					</tr>
 				</tbody>
 			</table>
 		</div>
 
 		<div class="col-md-4">
-			<h3>Net Income: <?php echo  $total_income - $total_cost ?></h3>
-			<h3>Gross Income: <?php echo ($total_income + $total_credit) - ($total_cost + $total_debt) ?></h3>
+			<h3>Net Income: <?php echo  number_format($total_income - $total_cost) ?></h3>
+			<h3>Gross Income: <?php echo number_format(($total_income + $total_credit) - ($total_cost + $total_debt)) ?></h3>
 		</div>
 	</div>
 </div>

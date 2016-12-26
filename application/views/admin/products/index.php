@@ -32,9 +32,9 @@
 								<td><?php echo $product->name ?></td>
 								<td><?php echo $product->brand ?></td>
 								<td><?php echo $product->category_name	 ?></td>
-								<td><?php echo $product->retail_price ?></td>
-								<!-- <td><?php echo $product->wholesale_price ?></td> -->
-								<td><?php echo $product->buy_price ?></td>
+								<td><?php echo number_format($product->retail_price) ?></td>
+								<!-- <td><?php echo number_format($product->wholesale_price) ?></td> -->
+								<td><?php echo number_format($product->buy_price) ?></td>
 								<td><?php echo $product->stock ?></td>
 								<td>
 									<?php 
