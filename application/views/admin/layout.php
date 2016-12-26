@@ -12,6 +12,7 @@
   <link href="<?php echo site_url('assets/css/dataTables.bootstrap.min.css') ?>" rel="stylesheet">
   <link href="<?php echo site_url('assets/css/app.css') ?>" rel="stylesheet">
   <link href="<?php echo site_url('assets/css/morris.css') ?>" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css?family=Montserrat" rel="stylesheet">
   <script src="https://use.fontawesome.com/60f9933159.js"></script>
   <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
   <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
