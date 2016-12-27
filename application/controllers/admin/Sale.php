@@ -28,6 +28,7 @@ class Sale extends MY_Controller {
 
 	/**
 	 * sale detail by id
+	 * @param $id
 	 */
 	public function detail($id) {
 		$data['title'] = 'Sales Order';
@@ -123,6 +124,7 @@ class Sale extends MY_Controller {
 
 	/**
 	 * delete sale
+	 * @param $id
 	 */
 	public function delete($id) {
 		if (!$this->ion_auth->is_admin()) { // if not admin

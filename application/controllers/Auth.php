@@ -2,8 +2,7 @@
 
 class Auth extends MY_Controller {
 
-	public function __construct()
-	{
+	public function __construct() {
 		parent::__construct();
 		$this->load->database();
 		$this->load->library('form_validation');
@@ -13,8 +12,7 @@ class Auth extends MY_Controller {
 	}
 
 	// redirect if needed, otherwise display the user list
-	public function index()
-	{
+	public function index() {
 		redirect('auth/login','refresh');
 	}
 
@@ -60,8 +58,7 @@ class Auth extends MY_Controller {
 	}
 
 	// log the user out
-	public function logout()
-	{
+	public function logout() {
 		$this->data['title'] = "Logout";
 
 		// log the user out
@@ -73,8 +70,7 @@ class Auth extends MY_Controller {
 	}
 
 	// activate the user
-	public function activate($id, $code=false)
-	{
+	public function activate($id, $code=false) {
 		if ($code !== false)
 		{
 			$activation = $this->ion_auth->activate($id, $code);
@@ -95,76 +91,6 @@ class Auth extends MY_Controller {
 			// redirect them to the forgot password page
 			$this->session->set_flashdata('message', $this->ion_auth->errors());
 			redirect("auth/forgot_password", 'refresh');
-		}
-	}
-
-	// deactivate the user
-	public function deactivate($id = NULL)
-	{
-		if (!$this->ion_auth->logged_in() || !$this->ion_auth->is_admin())
-		{
-			// redirect them to the home page because they must be an administrator to view this
-			return show_error('You must be an administrator to view this page.');
-		}
-
-		$id = (int) $id;
-
-		$this->load->library('form_validation');
-		$this->form_validation->set_rules('confirm', $this->lang->line('deactivate_validation_confirm_label'), 'required');
-		$this->form_validation->set_rules('id', $this->lang->line('deactivate_validation_user_id_label'), 'required|alpha_numeric');
-
-		if ($this->form_validation->run() == FALSE)
-		{
-			// insert csrf check
-			$this->data['csrf'] = $this->_get_csrf_nonce();
-			$this->data['user'] = $this->ion_auth->user($id)->row();
-
-			$this->_render_page('auth/deactivate_user', $this->data);
-		}
-		else
-		{
-			// do we really want to deactivate?
-			if ($this->input->post('confirm') == 'yes')
-			{
-				// do we have a valid request?
-				if ($this->_valid_csrf_nonce() === FALSE || $id != $this->input->post('id'))
-				{
-					show_error($this->lang->line('error_csrf'));
-				}
-
-				// do we have the right userlevel?
-				if ($this->ion_auth->logged_in() && $this->ion_auth->is_admin())
-				{
-					$this->ion_auth->deactivate($id);
-				}
-			}
-
-			// redirect them back to the auth page
-			redirect('auth', 'refresh');
-		}
-	}
-
-	public function _get_csrf_nonce()
-	{
-		$this->load->helper('string');
-		$key   = random_string('alnum', 8);
-		$value = random_string('alnum', 20);
-		$this->session->set_flashdata('csrfkey', $key);
-		$this->session->set_flashdata('csrfvalue', $value);
-
-		return array($key => $value);
-	}
-
-	public function _valid_csrf_nonce()
-	{
-		$csrfkey = $this->input->post($this->session->flashdata('csrfkey'));
-		if ($csrfkey && $csrfkey == $this->session->flashdata('csrfvalue'))
-		{
-			return TRUE;
-		}
-		else
-		{
-			return FALSE;
 		}
 	}
 

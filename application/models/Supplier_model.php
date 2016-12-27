@@ -16,7 +16,7 @@ class Supplier_model extends CI_Model {
 		[
 			'field' => 'email',
 			'label' => 'Supplier Email',
-			'rules' => 'required',
+			'rules' => 'required|valid_email',
 		],
 		[
 			'field' => 'description',

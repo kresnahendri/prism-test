@@ -42,7 +42,7 @@ class Customer extends MY_Controller {
 		$data['sub_title'] = 'Create';
 		// validation form rule
 		$this->form_validation->set_rules($this->m_customer->conf_customer_input_form_val);
-
+		$this->form_validation->set_rules('email', 'Email', 'required|valid_email|is_unique[customer.email]');
 		// validate
 		if ($this->form_validation->run()) { // if pass
 			$this->m_customer->insert($this->input->post());

@@ -16,7 +16,7 @@ class Purchase_model extends CI_Model {
 		[
 			'field' => 'order_no',
 			'label' => 'Order Number',
-			'rules' => 'trim|required|min_length[9]|max_length[9]|is_unique[purchase.order_no]',
+			'rules' => 'trim|required|min_length[9]|max_length[9]',
 		],
 		[
 			'field' => 'supplier_id',

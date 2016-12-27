@@ -8,6 +8,9 @@
     <?php endif ?>
     <th class="text-right">Item Price</th>
     <th class="text-right">Sub-Total</th>
+    <?php if (!$checkout): ?>
+      <th></th>
+    <?php endif ?>
   </thead>
 
   <tbody>
@@ -30,9 +33,12 @@
         </td>
         <!-- img & name -->
         <td>
-          <img src="<?php echo PRODUCT_IMG_BASE_URL.$items['img'] ?>" alt="<?php echo $items['name'] ?>" style="width: 50%;"><br>
-          <?php echo $items['name']; ?>  
+          <a href="<?php echo site_url('shop/product/'.$items['id']) ?>">
+            <img src="<?php echo PRODUCT_IMG_BASE_URL.$items['img'] ?>" alt="<?php echo $items['name'] ?>" style="width: 50%;"><br>
+            <?php echo $items['name']; ?> 
+          </a>
         </td>
+        <!-- stock -->
         <?php if (!$checkout): ?>
           <td class="text-right"><?php echo $items['stock'] ?></td>
         <?php endif ?>
@@ -40,6 +46,14 @@
         <td class="text-right">Rp <?php echo $this->cart->format_number($items['price']); ?></td>
         <!-- subtotal -->
         <td class="text-right">Rp <?php echo $this->cart->format_number($items['subtotal']); ?></td>
+        <!-- remove button -->
+        <?php if (!$checkout): ?>
+          <td>
+            <a href="<?php echo site_url('shop/cart/remove/'.$items['rowid']) ?>">
+              <i class="fa fa-times"></i>    
+            </a>
+          </td>
+        <?php endif ?>
       </tr>
       <?php $i++; ?>
       <?php echo form_hidden('counter', $i); ?>

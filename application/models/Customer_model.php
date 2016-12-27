@@ -16,7 +16,7 @@ class Customer_model extends CI_Model {
 		[
 			'field' => 'email',
 			'label' => 'Customer Email',
-			'rules' => 'required',
+			'rules' => 'required|valid_email',
 		],
 		[
 			'field' => 'phone',
@@ -112,7 +112,7 @@ class Customer_model extends CI_Model {
 	}
 
 	/**
-	 * insert data
+	 * insert customer
 	 * @param $input
 	 * @return boolean
 	 */
@@ -122,7 +122,7 @@ class Customer_model extends CI_Model {
 	}
 
 	/**
-	 * update data
+	 * update customer
 	 * @param $id, $input
 	 * @return boolean
 	 */
@@ -133,7 +133,7 @@ class Customer_model extends CI_Model {
 	}
 
 	/**
-	 * delete data
+	 * delete customer
 	 * @param $id
 	 */
 	public function delete($id) {

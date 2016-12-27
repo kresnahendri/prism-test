@@ -119,13 +119,19 @@ class Product_model extends MY_Model {
 
 	/**
 	 * get product(s) with where condition
-	 * @param $where
+	 * @param $where, $limit = NULL
 	 * @return bool
 	 */
-	public function get_where($where) {
+	public function get_where($where, $limit = NULL) {
 		$this->get_general();
 		$this->db->where($where);
-		$query = $this->db->get('product');
+		
+		if ($limit) {
+			$query = $this->db->get('product', $limit);
+		} else {
+			$query = $this->db->get('product');
+		}
+
 		if ($query->num_rows() > 1) {
 			return $query->result();
 		} else {

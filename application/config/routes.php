@@ -1,9 +1,10 @@
 <?php
 defined('BASEPATH') OR exit('No direct script access allowed');
 
-$route['default_controller'] = 'auth';
+$route['default_controller'] = 'shop/product';
 $route['404_override'] = '';
 $route['translate_uri_dashes'] = TRUE;
+
 $route['/'] = "admin/report";
 $route['admin'] = "auth";
 
@@ -18,6 +19,12 @@ $route['admin/category'] = "admin/category";
 $route['admin/category/(:num)'] = "admin/category/detail/$1";
 $route['admin/category/(:num)/edit'] = "admin/category/update/$1";
 $route['admin/category/(:num)/delete'] = "admin/category/delete/$1";
+
+// admin/revies routes
+$route['admin/review'] = "admin/review";
+$route['admin/review/(:num)'] = "admin/review/detail/$1";
+$route['admin/review/(:num)/edit'] = "admin/review/update/$1";
+$route['admin/review/(:num)/delete'] = "admin/review/delete/$1";
 
 // admin/supplier routes
 $route['admin/supplier'] = "admin/supplier";

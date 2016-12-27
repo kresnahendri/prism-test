@@ -26,7 +26,7 @@ class Category extends MY_Controller {
 	 * @param $id
 	 */
 	public function detail($id) {
-		$data['title'] = 'category';
+		$data['title'] = 'Category';
 		$data['sub_title'] = 'Detail';
 		$data['category'] = $this->m_category->get_where('category.id = '.$id); // get category by id
 		$this->render('admin/categories/detail', $data);

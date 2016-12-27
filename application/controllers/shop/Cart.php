@@ -14,6 +14,9 @@ class Cart extends MY_Controller {
 		$this->load->library('cart');
 	}
 
+	/**
+	 * cart list
+	 */
 	public function index() {
 		$data['title'] = 'Cart List';
 		if ($this->cart->total_items() < 1) {
@@ -23,35 +26,42 @@ class Cart extends MY_Controller {
 		}
 	}
 
+	/**
+	 * add item to cart
+	 */
 	public function add() {
-    $limit = $this->input->post('stock') + 1;
-		$this->form_validation->set_rules('qty', 'Quantity', 'required|greater_than[0]|less_than['.$limit.']');
-
+    $limit = $this->input->post('stock') + 1; // qty limit
+		$this->form_validation->set_rules('qty', 'Quantity', 'required|greater_than[0]|less_than['.$limit.']'); // validation rules
+		// initalizing data
 		$data = [
       'id'      => $this->input->post('id'),
       'qty'     => $this->input->post('qty'),
       'price'   => $this->input->post('price'),
       'name'    => $this->input->post('name'),
       'img'			=> $this->input->post('img'),
-      'stock'			=> $this->input->post('stock'),
+      'stock'		=> $this->input->post('stock'),
 		];
 
-		if ($this->form_validation->run()) {
-			$this->cart->insert($data);
+		if ($this->form_validation->run()) { // if pass
+			$this->cart->insert($data); // add to cart
 			$this->session->set_flashdata('success', 'Add to Cart is Sucessful');
 			redirect('shop/cart','refresh');
-		} else {
+		} else { // if not pass
 			$this->session->set_flashdata('err', validation_errors());
 			redirect('shop/product/detail/'.$data['id'],'refresh');
 		}
 		
 	}
 
+	/**
+	 * update cart when qty of items was changed
+	 */
 	public function update() {
     $data = [];
-    for ($i=1; $i <= $this->input->post('counter'); $i++) { 
+    // get each data from cart
+    for ($i=1; $i < $this->input->post('counter'); $i++) { 
 	    $limit = $this->input->post($i.'[stock]') + 1;
-			$this->form_validation->set_rules($i.'[qty]', 'Quantity', 'required|greater_than[0]|less_than['.$limit.']');
+			$this->form_validation->set_rules($i.'[qty]', 'Quantity '.$i, 'required|greater_than[0]|less_than['.$limit.']');
       array_push(
         $data, 
         [
@@ -60,20 +70,36 @@ class Cart extends MY_Controller {
         ]
       );
     }
-    if ($this->form_validation->run()) {
+    // validate
+    if ($this->form_validation->run()) { // if pass
 	    $this->cart->update($data);
 			$this->session->set_flashdata('success', 'Update Cart is Sucessful');
-		} else {
+		} else { // if not pass
 			$this->session->set_flashdata('err', validation_errors());
 		}
 		redirect('shop/cart','refresh');
   }
 
+  /**
+   * remove item by cart's row_id
+   * @param $row_id
+   */
+  public function remove($row_id) {
+  	$this->cart->remove($row_id);
+  	redirect('shop/cart','refresh');
+  }
+
+  /**
+   * emptying cart
+   */
 	public function destroy() {
 		$this->cart->destroy();
 		redirect('shop/cart','refresh');
 	}
 
+	/**
+	 * checkout, insert data order, customer to db
+	 */
 	public function checkout() {
 		if ($this->cart->total_items() < 1) {
 			redirect('shop','refresh');
@@ -110,7 +136,6 @@ class Cart extends MY_Controller {
 		} else { // if not pass
 			$this->session->set_flashdata('err', validation_errors());
 			$this->render_shop('shop/carts/checkout');
-			// redirect('shop/cart/checkout','refresh');
 		}
 	}
 }

@@ -74,6 +74,7 @@
               <ul id="pm" class="collapse in">
                 <li><a href="<?php echo site_url('admin/product') ?>">Product</a></li>
                 <li><a href="<?php echo site_url('admin/category') ?>">Category</a></li>
+                <li><a href="<?php echo site_url('admin/review') ?>">Prod. Review</a></li>
               </ul>
             </li>
             <li><a href="<?php echo site_url('admin/supplier') ?>"><i class="fa fa-fw fa-truck"></i> Supplier</a></li>

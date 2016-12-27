@@ -42,6 +42,7 @@ class Supplier extends MY_Controller {
 		$data['sub_title'] = 'Create';
 		// validation form rule
 		$this->form_validation->set_rules($this->m_supplier->conf_supplier_input_form_val);
+		$this->form_validation->set_rules('email', 'Email', 'required|valid_email|is_unique[supplier.email]');
 
 		// validate
 		if ($this->form_validation->run()) { // if pass

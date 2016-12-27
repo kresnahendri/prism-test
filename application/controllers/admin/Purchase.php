@@ -25,6 +25,7 @@ class Purchase extends MY_Controller {
 
 	/**
 	 * purchase detail by id
+	 * @param $id
 	 */
 	public function detail($id) {
 		$data['title'] = 'Purchase Order';
@@ -105,6 +106,7 @@ class Purchase extends MY_Controller {
 
 	/**
 	 * delete purchase
+	 * @param $id
 	 */
 	public function delete($id) {
 		if (!$this->ion_auth->is_admin()) {

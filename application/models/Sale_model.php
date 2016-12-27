@@ -17,7 +17,7 @@ class Sale_model extends MY_Model {
 		[
 			'field' => 'order_no',
 			'label' => 'Order Number',
-			'rules' => 'trim|required|min_length[9]|max_length[9]|is_unique[sale.order_no]',
+			'rules' => 'trim|required|min_length[9]|max_length[9]',
 		],
 		[
 			'field' => 'customer_id',

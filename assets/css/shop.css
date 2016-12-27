@@ -5,6 +5,17 @@ body {
 	padding-bottom: 20px;
 }
 
+@media (min-width: @screen-md-min) {
+	.category-box {
+		position: fixed;
+	}
+
+	ul.category-box li {
+		padding-left: 50px;
+		padding-right: 50px;
+	}
+}
+
 .product-box {
 	/*min-height: 400px;*/
 }

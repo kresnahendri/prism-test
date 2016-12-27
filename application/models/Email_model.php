@@ -9,6 +9,10 @@ class Email_model extends CI_Model {
 		define("ADMIN_EMAIL", "kresnahendri@gmail.com");
 	}
 
+	/**
+	 * send email
+	 * @param $to, $subject, $msg
+	 */
 	public function send_email($to, $subject, $msg) {
 		$this->email->from('cs@prismshop.co', 'PRISM-SHOP');
 		$this->email->to($to);
@@ -17,6 +21,10 @@ class Email_model extends CI_Model {
 		$this->email->send();
 	}
 
+	/**
+	 * send email when customer order from checkout page
+	 * @param $to, $subject, $msg
+	 */
 	public function customer_order($to, $sale) {
 		$subject = 'Customer Order-'.$sale->first_row()->order_no;
 		$data['sale'] = $sale;
@@ -25,6 +33,10 @@ class Email_model extends CI_Model {
 		$this->send_email(ADMIN_EMAIL, $subject, $msg);
 	}
 
+	/**
+	 * send email when customer confirm order payment
+	 * @param $to, $subject, $msg
+	 */
 	public function customer_payment_confirmation($to, $sale) {
 		$subject = 'Customer Order-'.$sale->first_row()->order_no;
 		$data['sale'] = $sale;
@@ -33,6 +45,10 @@ class Email_model extends CI_Model {
 		$this->send_email(ADMIN_EMAIL, $subject, $msg);
 	}
 
+	/**
+	 * send email when order shipped
+	 * @param $to, $subject, $msg
+	 */
 	public function sale_admin_shipped($to, $sale) {
 		$subject = 'Customer Order-'.$sale->first_row()->order_no;
 		$data['sale'] = $sale;
@@ -41,6 +57,10 @@ class Email_model extends CI_Model {
 		$this->send_email(ADMIN_EMAIL, $subject, $msg);
 	}	
 
+	/**
+	 * send email when order paid
+	 * @param $to, $subject, $msg
+	 */
 	public function sale_admin_paid($to, $sale) {
 		$subject = 'Customer Order-'.$sale->first_row()->order_no;
 		$data['sale'] = $sale;
@@ -49,6 +69,10 @@ class Email_model extends CI_Model {
 		$this->send_email(ADMIN_EMAIL, $subject, $msg);
 	}
 
+	/**
+	 * send email when product was recived by customer
+	 * @param $to, $subject, $msg
+	 */
 	public function sale_admin_recived($to, $sale) {
 		$subject = 'Customer Order-'.$sale->first_row()->order_no;
 		$data['sale'] = $sale;
@@ -57,16 +81,18 @@ class Email_model extends CI_Model {
 		$this->send_email(ADMIN_EMAIL, $subject, $msg);
 	}
 
+
+	// email for supplier
 	public function purchase_admin_shipped() {
-		
+		// code here
 	}	
 
 	public function purchase_admin_paid() {
-		
+		// code here
 	}
 
 	public function purchase_admin_recived() {
-		
+		// code here
 	}	
 
 }

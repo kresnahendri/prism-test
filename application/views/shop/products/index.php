@@ -1,6 +1,6 @@
 <div class="row">
 	<div class="col-md-3">
-		<ul class="list-group">
+		<ul class="list-group category-box">
 			<li class="list-group-item"><h3>Categories</h3></li>
 			<li class="list-group-item">
 				<a href="<?php echo site_url('shop') ?>">All</a>
