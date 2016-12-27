@@ -39,7 +39,10 @@ class Product extends MY_Controller {
 	 */
 	public function detail($id) {
 		$data['title'] = 'Product Detail';
-		$data['product'] = $this->m_product->get_where('product.id = '.$id); // get product by id
+		$data['product'] = $this->m_product->get_where('product.id = '.$id.' AND product.active = 1'); // get product by id
+		if (!$data['product']) {
+			redirect('shop','refresh');
+		}
 		$data['reviews'] = $this->m_product_review->get_where('product_id = '.$id.' AND active = 1');
 		$category_id = $data['product']->category_id;
 		$data['related_products'] = $this->m_product->get_where('product.active = 1 AND product.id != '.$id.' AND product.category_id = '.$category_id, 3); // get related products

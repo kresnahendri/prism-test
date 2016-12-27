@@ -37,30 +37,30 @@
 <hr>
 
 <!-- related product -->
-<div class="row">
+<!-- <div class="row">
 	<div class="col-md-12">
 		<h3>Related products</h3>
 		<?php if ($related_products): ?>
-			<?php foreach ($related_products as $product): ?>
+			<?php foreach ($related_products as $related_product): ?>
 				<div class="col-sm-3 col-xs-6">
-					<a href="<?php echo site_url('shop/product/detail/'.$product->id) ?>" class="product-link">
+					<a href="<?php echo site_url('shop/product/detail/'.$related_product->id) ?>" class="product-link">
 						<div class="panel panel-default">
 						  <div class="panel-body product-box">
 						  	<div class="product-box-img">
-						    	<img src="<?php echo PRODUCT_IMG_BASE_URL.$product->img ?>" alt="<?php echo $product->name ?>" class="img-responsive">
+						    	<img src="<?php echo PRODUCT_IMG_BASE_URL.$related_product->img ?>" alt="<?php echo $related_product->name ?>" class="img-responsive">
 						    </div>
 						    <div class="product-box-info">
 						    	<div class="product-box-info__content">
-								    <h6><?php echo word_limiter($product->name, 10) ?></h6>
-								    <h5 class="product-price">Rp <?php echo number_format($product->retail_price) ?></h5>
+								    <h6><?php echo word_limiter($related_product->name, 10) ?></h6>
+								    <h5 class="product-price">Rp <?php echo number_format($related_product->retail_price) ?></h5>
 
 								    <?php echo form_open('shop/cart/add', ['class' => 'form-inline']); ?>
-											<?php echo form_hidden('stock', $product->stock); ?>
-											<?php echo form_hidden('id', $product->id); ?>
-											<?php echo form_hidden('price', $product->retail_price); ?>
-											<?php echo form_hidden('name', $product->name); ?>
-											<?php echo form_hidden('img', $product->img); ?>
-											<?php echo form_hidden('stock', $product->stock); ?>
+											<?php echo form_hidden('stock', $related_product->stock); ?>
+											<?php echo form_hidden('id', $related_product->id); ?>
+											<?php echo form_hidden('price', $related_product->retail_price); ?>
+											<?php echo form_hidden('name', $related_product->name); ?>
+											<?php echo form_hidden('img', $related_product->img); ?>
+											<?php echo form_hidden('stock', $related_product->stock); ?>
 											<?php echo form_hidden('qty', 1); ?>
 										  <button type="submit" class="btn btn-success btn-block">Add To Cart</button>
 										<?php echo form_close(); ?>
@@ -73,7 +73,7 @@
 			<?php endforeach ?>
 		<?php endif ?>
 	</div>
-</div>
+</div> -->
 
 <hr>
 <!-- product review -->
