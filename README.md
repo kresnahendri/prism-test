@@ -35,7 +35,7 @@ Juga menginformasikan jumlah pengeluaran, pendapatan, hutang, piutang, gross inc
 - purchase: create purchase, view purchase, report
 - sale: create sale, view sale, report
 
-## Online Shop
+## Online Shop (Customer Shopping Cart)
 Merupakan toko online untuk para pelanggan dimana mereka bisa melakukan pembelian produk secara langsung. Setelah customer melakukan checkout dan ourder, data Sales akan terupdate di halaman admin dan mengirim notifikasi ke email admin. Selanjutnya pelanggan harus melakukan konfirmasi pembayaran untuk nomor SO. Setiap perubahan status order, sistem akan menginformasikan perubahan tersebut kepada pelanggan melalui email. Di online shop ini pelanggan bisa melakukan aktifitas melihat, membeli, dan mereview produk.
 
 ## Use case
