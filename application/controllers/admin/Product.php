@@ -75,7 +75,11 @@ class Product extends MY_Controller {
 		$this->form_validation->set_rules($this->m_product->conf_product_input_form_val);
 
 		if ($this->form_validation->run()) { // if pass
-			$img = $this->m_product->upload_img(); // upload produtct img
+			if ($this->m_product->upload_img()) {
+				$img = $this->m_product->upload_img(); // upload produtct img
+			} else {
+				$img['file_name'] = $data['product']->img; // upload produtct img
+			}
 
 			$this->m_product->update($id, $this->input->post(), $img['file_name']);
 			$this->session->set_flashdata('success', 'Update Success');
