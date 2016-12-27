@@ -8,6 +8,7 @@ class Sale extends MY_Controller {
 		$this->load->model('Product_model', 'm_product');
 		$this->load->model('Customer_model', 'm_customer');
 		$this->load->model('Sale_model', 'm_sale');
+		$this->load->model('Sale_payment_conf_model', 'm_sale_payment_conf');
 		if (!$this->ion_auth->logged_in() || (!$this->ion_auth->is_admin() && !$this->ion_auth->is_sale())) {
 			redirect('auth/login','refresh');
 		}
@@ -33,6 +34,7 @@ class Sale extends MY_Controller {
 		$data['sub_title'] = 'Detail';
 		
 		$data['sale'] = $this->m_sale->get_where('sale.id = '.$id); // get sale by id
+		$data['payment_confs'] = $this->m_sale_payment_conf->get_where('sale_id = '.$id);
 		$this->render('admin/sales/detail', $data);
 	}
 

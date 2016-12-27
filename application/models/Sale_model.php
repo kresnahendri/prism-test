@@ -283,6 +283,10 @@ class Sale_model extends MY_Model {
 		$this->db->delete('sale_detail');
 	}
 
+	/**
+	 * handling email when status was changed
+	 * @param $to, $sale
+	 */
 	public function handling_email($to, $sale) {
 		if ($this->input->post('accepted') != NULL && $this->input->post('paid') != NULL && $this->input->post('shipped') != NULL && $this->input->post('recived') != NULL) {
 			$this->m_email->sale_admin_recived($to, $sale);

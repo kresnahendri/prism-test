@@ -36,9 +36,40 @@
       <p><b>Recived:</b> <?php echo $sale->first_row()->recived ? $sale->first_row()->recived_date : '-'; ?></p>
     </div>
   </div>
+  
+  <!-- payment confirmation -->
+  <?php if ($payment_confs): ?>
+    <h3>Payment Confirmation</h3>
+    <table class="table">
+      <thead>
+        <th>Merchant Bank</th>
+        <th>Customer Bank</th>
+        <th>Customer Bank Acc.</th>
+        <th>Total Payment</th>
+        <th>Payment Date</th>
+      </thead>
+      <tbody>
+        <tbody>
+          <?php foreach ($payment_confs as $pc): ?>
+            <tr>
+              <td><?php echo $pc->merchant_bank ?></td>
+              <td><?php echo $pc->customer_bank ?></td>
+              <td><?php echo $pc->customer_bank_account ?></td>
+              <td><?php echo number_format($pc->total_amount) ?></td>
+              <td><?php echo $pc->payment_date ?></td>
+            </tr>
+          <?php endforeach ?>
+        </tbody>
+      </tbody>
+    </table>
+  <?php endif ?>
+
   <hr>
+  
+  <!-- product detail -->
   <div class="row">
     <div class="col-md-12">
+      <h3>Products Detail</h3>
       <table class="table table-stripped table-bordered">
         <thead>
           <th>SKU</th>
@@ -61,13 +92,14 @@
           <?php endforeach ?>
           <tr>
             <td colspan="4"></td>
-            <td><?php echo $total_amount ?></td>
+            <td><?php echo number_format($total_amount) ?></td>
           </tr>
         </tbody>
       </table>
     </div>
   </div>
-
+  
+  <!-- notes -->
   <div class="row">
     <div class="col-md-12">
       <h4>Notes:</h4>
@@ -75,66 +107,66 @@
     </div>
   </div>
 
-    <?php if (!$this->m_sale->is_completed($sale->first_row()->sale_id)): ?>
-      <?php echo form_label('Update Status', 'status', ['class' => 'control-label']); ?>
-      <?php echo form_open('admin/sale/update-status/'.$sale->first_row()->sale_id); ?>
-        <?php echo form_hidden('order_no', $sale->first_row()->order_no); ?>
-        <?php echo form_hidden('notes', $sale->first_row()->notes); ?>
-        <?php echo form_hidden('customer_id', $sale->first_row()->customer_id); ?>
-        <!-- status -->
-        <div class="row">
-          <!-- accepted checkbox -->
-          <div class="col-md-3">
-            <div class="checkbox">
-              <label>       
-                <?php echo form_checkbox('accepted', 1, $sale->first_row()->accepted); ?>
-                <i class="fa fa-check-circle-o"></i> Accepted
-                <input type="date" class="form-control" name="accepted_date" value="<?php if($sale->first_row()->accepted_date) { echo date('Y-m-d', strtotime($sale->first_row()->accepted_date)); } ?>">
-              </label>
-            </div>
-          </div>
-
-          <!-- paid checkbox -->
-          <div class="col-md-3">
-            <div class="checkbox">
-              <label>       
-                <?php echo form_checkbox('paid', 1, $sale->first_row()->paid); ?>
-                <i class="fa fa-dollar"></i> Paid
-                <input type="date" class="form-control" name="paid_date" value="<?php if($sale->first_row()->paid_date) { echo date('Y-m-d', strtotime($sale->first_row()->paid_date)); } ?>">
-              </label>
-            </div>
-          </div>
-
-          <!-- shipped checkbox -->
-          <div class="col-md-3">
-            <div class="checkbox">
-              <label>
-                <?php echo form_checkbox('shipped', 1, $sale->first_row()->shipped); ?>
-                <i class="fa fa-ship"></i> Shipped
-                <input type="date" class="form-control" name="shipped_date" value="<?php if($sale->first_row()->shipped_date) { echo date('Y-m-d', strtotime($sale->first_row()->shipped_date)); } ?>">
-              </label>
-            </div>
-          </div>
-
-          <!-- recived checkbox -->
-          <div class="col-md-3">
-            <div class="checkbox">
-              <label>       
-                <?php echo form_checkbox('recived', 1, $sale->first_row()->recived); ?>
-                <i class="fa fa-building"></i> Recived
-                <input type="date" class="form-control" name="recived_date" value="<?php if($sale->first_row()->recived_date) { echo date('Y-m-d', strtotime($sale->first_row()->recived_date)); } ?>">
-              </label>
-            </div>
+  <?php if (!$this->m_sale->is_completed($sale->first_row()->sale_id)): ?>
+    <?php echo form_label('Update Status', 'status', ['class' => 'control-label']); ?>
+    <?php echo form_open('admin/sale/update-status/'.$sale->first_row()->sale_id); ?>
+      <?php echo form_hidden('order_no', $sale->first_row()->order_no); ?>
+      <?php echo form_hidden('notes', $sale->first_row()->notes); ?>
+      <?php echo form_hidden('customer_id', $sale->first_row()->customer_id); ?>
+      <!-- status -->
+      <div class="row">
+        <!-- accepted checkbox -->
+        <div class="col-md-3">
+          <div class="checkbox">
+            <label>       
+              <?php echo form_checkbox('accepted', 1, $sale->first_row()->accepted); ?>
+              <i class="fa fa-check-circle-o"></i> Accepted
+              <input type="date" class="form-control" name="accepted_date" value="<?php if($sale->first_row()->accepted_date) { echo date('Y-m-d', strtotime($sale->first_row()->accepted_date)); } ?>">
+            </label>
           </div>
         </div>
-        <div class="form-group pull-right">
-          <a href="<?php echo site_url('admin/sale') ?>" class="btn btn-danger">Back</a>
-          <button class="btn btn-primary">Update</button>
+
+        <!-- paid checkbox -->
+        <div class="col-md-3">
+          <div class="checkbox">
+            <label>       
+              <?php echo form_checkbox('paid', 1, $sale->first_row()->paid); ?>
+              <i class="fa fa-dollar"></i> Paid
+              <input type="date" class="form-control" name="paid_date" value="<?php if($sale->first_row()->paid_date) { echo date('Y-m-d', strtotime($sale->first_row()->paid_date)); } ?>">
+            </label>
+          </div>
         </div>
-      <?php echo form_close(); ?>
-    <?php else: ?>
-      <!-- <h1><span class="label label-success">C O M P L E T E D</span> -->
-      <a href="<?php echo site_url('admin/sale') ?>" class="btn btn-danger pull-right">Back</a></h1>
-    <?php endif ?>
+
+        <!-- shipped checkbox -->
+        <div class="col-md-3">
+          <div class="checkbox">
+            <label>
+              <?php echo form_checkbox('shipped', 1, $sale->first_row()->shipped); ?>
+              <i class="fa fa-ship"></i> Shipped
+              <input type="date" class="form-control" name="shipped_date" value="<?php if($sale->first_row()->shipped_date) { echo date('Y-m-d', strtotime($sale->first_row()->shipped_date)); } ?>">
+            </label>
+          </div>
+        </div>
+
+        <!-- recived checkbox -->
+        <div class="col-md-3">
+          <div class="checkbox">
+            <label>       
+              <?php echo form_checkbox('recived', 1, $sale->first_row()->recived); ?>
+              <i class="fa fa-building"></i> Recived
+              <input type="date" class="form-control" name="recived_date" value="<?php if($sale->first_row()->recived_date) { echo date('Y-m-d', strtotime($sale->first_row()->recived_date)); } ?>">
+            </label>
+          </div>
+        </div>
+      </div>
+      <div class="form-group pull-right">
+        <a href="<?php echo site_url('admin/sale') ?>" class="btn btn-danger">Back</a>
+        <button class="btn btn-primary">Update</button>
+      </div>
+    <?php echo form_close(); ?>
+  <?php else: ?>
+    <!-- <h1><span class="label label-success">C O M P L E T E D</span> -->
+    <a href="<?php echo site_url('admin/sale') ?>" class="btn btn-danger pull-right">Back</a></h1>
+  <?php endif ?>
 
 </div>

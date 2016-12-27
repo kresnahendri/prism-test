@@ -6,6 +6,7 @@ class Email_model extends CI_Model {
 	public function __construct() {
 		parent::__construct();
 		$this->load->library('email');
+		define("ADMIN_EMAIL", "kresnahendri@gmail.com");
 	}
 
 	public function send_email($to, $subject, $msg) {
@@ -21,10 +22,15 @@ class Email_model extends CI_Model {
 		$data['sale'] = $sale;
 		$msg = $this->load->view('email/customer_order',$data, TRUE);
 		$this->send_email($to, $subject, $msg);
+		$this->send_email(ADMIN_EMAIL, $subject, $msg);
 	}
 
-	public function customer_payment_confirmation() {
-		
+	public function customer_payment_confirmation($to, $sale) {
+		$subject = 'Customer Order-'.$sale->first_row()->order_no;
+		$data['sale'] = $sale;
+		$msg = $this->load->view('email/customer_payment_confirmation',$data, TRUE);
+		$this->send_email($to, $subject, $msg);
+		$this->send_email(ADMIN_EMAIL, $subject, $msg);
 	}
 
 	public function sale_admin_shipped($to, $sale) {
@@ -32,6 +38,7 @@ class Email_model extends CI_Model {
 		$data['sale'] = $sale;
 		$msg = $this->load->view('email/admin_sale_shipped',$data, TRUE);
 		$this->send_email($to, $subject, $msg);
+		$this->send_email(ADMIN_EMAIL, $subject, $msg);
 	}	
 
 	public function sale_admin_paid($to, $sale) {
@@ -39,6 +46,7 @@ class Email_model extends CI_Model {
 		$data['sale'] = $sale;
 		$msg = $this->load->view('email/admin_sale_paid',$data, TRUE);
 		$this->send_email($to, $subject, $msg);
+		$this->send_email(ADMIN_EMAIL, $subject, $msg);
 	}
 
 	public function sale_admin_recived($to, $sale) {
@@ -46,6 +54,7 @@ class Email_model extends CI_Model {
 		$data['sale'] = $sale;
 		$msg = $this->load->view('email/admin_sale_recived',$data, TRUE);
 		$this->send_email($to, $subject, $msg);
+		$this->send_email(ADMIN_EMAIL, $subject, $msg);
 	}
 
 	public function purchase_admin_shipped() {

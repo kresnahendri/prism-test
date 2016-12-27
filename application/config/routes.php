@@ -53,4 +53,4 @@ $route['shop/brand/(:any)'] = "shop/product/brand/$1";
 $route['shop/checkout'] = "shop/cart/checkout";
 
 // shop/payment_confirmation
-$route['payment-confimation'] = "shop/payment-confimation";
+$route['payment-confirmation'] = "shop/payment/confirmation";
