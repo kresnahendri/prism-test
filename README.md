@@ -69,10 +69,13 @@ Merupakan toko online untuk para pelanggan dimana mereka bisa melakukan pembelia
 
 
 ## How to run this app?
+- Install LAMP (look instruction here [here](https://www.digitalocean.com/community/tutorials/how-to-install-linux-apache-mysql-php-lamp-stack-on-ubuntu))
+- Move this project to /var/www/html/
+
 ### Setting database
-1. create dabase in your mysql with db nama: prism-test
-2. import `sql/prism-test.sql`
-3. change this line in `application/config/database.php`
+- create dabase in your MySql with database name: prism-test
+- import `sql/prism-test.sql`
+- config database setting in `application/config/database.php`:
 ```php
 $db['default'] = array(
 	'dsn'	=> '',
@@ -88,10 +91,9 @@ $db['default'] = array(
 
 ### Seeting Base Url
 1. change this line in `application/config/config.php`.
+	 from `$config['base_url'] = 'http://localhost/prism-test/';` to `$config['base_url'] = 'http://your-site-url/'`
 
-	from `$config['base_url'] = 'http://localhost/prism-test/';` to `$config['base_url'] = 'http://your-site-url/'`
-
-2. Run app on your web browser `http://your-site-url/`
+2. Run app on your web browser `http://your-site-url/` for online shop page, `http://your-site-url/admin` for admin page.
 
 3. Tada!! The app is ready
 
@@ -115,7 +117,7 @@ $db['default'] = array(
 	password: password
 
 ## Demo
-- try IMS demo [here](http://kresna-prism-test.pe.hu/admin)
+- Try IMS (admin) demo [here](http://kresna-prism-test.pe.hu/admin)
 - Do you want to shopping? try this demo [here](http://kresna-prism-test.pe.hu)
 
 ## Notes
