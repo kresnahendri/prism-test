@@ -46,6 +46,10 @@ class Product extends MY_Controller {
 		$this->render_shop('shop/products/detail', $data);
 	}
 
+	/**
+	 * add review for product, based on product id
+	 * @param $id
+	 */
 	public function add_review($product_id) {
 		$this->form_validation->set_rules($this->m_product_review->conf_review_input_form_val);
 

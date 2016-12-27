@@ -35,14 +35,17 @@ Juga menginformasikan jumlah pengeluaran, pendapatan, hutang, piutang, gross inc
 - purchase: create purchase, view purchase, report
 - sale: create sale, view sale, report
 
+## Online Shop
+Merupakan toko online untuk para pelanggan dimana mereka bisa melakukan pembelian produk secara langsung. Setelah customer melakukan checkout dan ourder, data Sales akan terupdate di halaman admin dan mengirim notifikasi ke email admin. Selanjutnya pelanggan harus melakukan konfirmasi pembayaran untuk nomor SO. Setiap perubahan status order, sistem akan menginformasikan perubahan tersebut kepada pelanggan melalui email. Di online shop ini pelanggan bisa melakukan aktifitas melihat, membeli, dan mereview produk.
+
 ## Use case
-![prism-test-usecase](https://s23.postimg.org/g0loywal7/prism_test_use_case.jpg)
+![prism-test-usecase](https://s28.postimg.org/ikspydvjf/prism_test_use_case.png)
 
 ## ERD
-![prism-test-erd](https://s23.postimg.org/fl5ts4za3/erd_prism_test.png)
+![prism-test-erd](https://s28.postimg.org/u8mrsxkod/prism_test_erd.png)
 
 ## Class Diagram
-![prism-test-class-diagram](https://s23.postimg.org/ohl79tfa3/prism_test_class_diagram.jpg)
+![prism-test-class-diagram](https://s28.postimg.org/c4jr8amzv/prism_test_class_diagram.png)
 
 ## Environment
 ### Back-end
@@ -93,26 +96,27 @@ $db['default'] = array(
 3. Tada!! The app is ready
 
 #### Login
-- Superadmin
+- **Superadmin**
 
 	username: admin
 
 	password: password
 
-- Purchase Employee
+- **Purchase Employee**
 
 	username: purchase
 
 	password: password
 
-- Sales Employee
+- **Sales Employee**
 
 	username: sales
 
 	password: password
 
 ## Demo
-try the demo [here](http://kresna-prism-test.pe.hu)
+- try IMS demo [here](http://kresna-prism-test.pe.hu/admin)
+- Do you want to shopping? try this demo [here](http://kresna-prism-test.pe.hu)
 
 ## Notes
 If you get error like this:
